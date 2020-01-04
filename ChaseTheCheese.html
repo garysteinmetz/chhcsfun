@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script>
+            var cheeseImageWidth = 48;
+            var cheeseImageHeight = 48;
+            function getRandomWholeNumberUnder(range) {
+                return Math.floor(Math.random()*range);
+            }
+            function moveCheese() {
+                //get the HTML element representing the cheese image
+                var cheeseIcon = document.getElementById("cheese");
+
+                //get scrollbar settings - for this app both values are probably 0
+                //  reference - from https://plainjs.com/javascript/styles/get-and-set-scroll-position-of-an-element-26/
+                var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                //get the new position of the cheese
+                //  reference - https://www.w3schools.com/jsref/prop_win_innerheight.asp
+                //  use 'cheeseImageWidth/cheeseImageHeight' to factor in the width/height
+                //    of the cheese so that all of the cheese appears in the browser's window
+                //      (otherwise, there's a risk that part of the cheese will be outside of window
+                var leftOffset = getRandomWholeNumberUnder(window.innerWidth - cheeseImageWidth);
+                var topOffset = getRandomWholeNumberUnder(window.innerHeight - cheeseImageHeight);
+
+                //
+                cheeseIcon.style.left = (scrollLeft + leftOffset) + "px";
+                cheeseIcon.style.top = (scrollTop + topOffset) + "px";
+            }
+        </script>
+        <style>
+            img.cheese {
+                width: 48px;
+                height: 48px;
+                position: fixed;
+            }
+        </style>
+    </head>
+    <!-- Use 'onresize' event to move cheese if user changes window size or scrollbar settings -->
+    <body onresize="moveCheese()">
+        <!-- Move cheese whenever mouse touches it -->
+        <img id="cheese" class="cheese" onmouseover="moveCheese()"
+             src="https://img.icons8.com/doodle/48/000000/cheese--v1.png"/>
+        <script>
+            //set initial positioning of cheese
+            moveCheese();
+        </script>
+    </body>
+</html>
