@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <script>
+            var startTime = (new Date()).getTime();
+            //end game 60 seconds after start time
+            var endTime = startTime + (60*1000);
+            var currentScore = 0;
+            //
+            var cheeseImageWidth = 48;
+            var cheeseImageHeight = 48;
+            function getRandomWholeNumberUnder(range) {
+                return Math.floor(Math.random()*range);
+            }
+            function scoreAndMoveCheese() {
+                currentScore++;
+                updateDisplaysForTimeAndScore();
+                moveCheese();
+            }
+            function updateDisplaysForTimeAndScore() {
+                var currentTime = (new Date()).getTime();
+                var timeLeft = "0.0";
+                if (currentTime < endTime) {
+                    timeLeft = ((endTime - currentTime)/1000).toFixed(1) + "";
+                } else {
+                    var cheeseIcon = document.getElementById("cheese");
+                    cheeseIcon.style.display = 'none';
+                }
+                document.getElementById("score_value").innerHTML = currentScore;
+                document.getElementById("time_value").innerHTML = timeLeft;
+            }
+            function moveCheese() {
+                //get the HTML element representing the cheese image
+                var cheeseIcon = document.getElementById("cheese");
+
+                //get scrollbar settings - for this app both values are probably 0
+                //  reference - from https://plainjs.com/javascript/styles/get-and-set-scroll-position-of-an-element-26/
+                var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                //get the new position of the cheese
+                //  reference - https://www.w3schools.com/jsref/prop_win_innerheight.asp
+                //  use 'cheeseImageWidth/cheeseImageHeight' to factor in the width/height
+                //    of the cheese so that all of the cheese appears in the browser's window
+                //      (otherwise, there's a risk that part of the cheese will be outside of window
+                var leftOffset = getRandomWholeNumberUnder(window.innerWidth - cheeseImageWidth);
+                var topOffset = getRandomWholeNumberUnder(window.innerHeight - cheeseImageHeight);
+
+                //
+                cheeseIcon.style.left = (scrollLeft + leftOffset) + "px";
+                cheeseIcon.style.top = (scrollTop + topOffset) + "px";
+            }
+            //
+            setInterval(updateDisplaysForTimeAndScore, 50);
+        </script>
+        <style>
+            img.cheese {
+                width: 48px;
+                height: 48px;
+                position: fixed;
+                //'z-index' of '1' places the cheese above everything else, like the scoreboard and timer
+                z-index: 1;
+            }
+            #score {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                text-align: center;
+                vertical-align: top;
+                padding-top: 10px;
+                color: #4F4F4F;
+                font-weight: bold;
+            }
+            #score_value {
+                margin-top: 16px;
+                font-size: 18pt;
+            }
+            #time {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                text-align: center;
+                vertical-align: top;
+                padding-top: 10px;
+                color: #4F4F4F;
+                font-weight: bold;
+            }
+            #time_value {
+                margin-top: 16px;
+                font-size: 18pt;
+            }
+        </style>
+    </head>
+    <!-- Use 'onresize' event to move cheese if user changes window size or scrollbar settings -->
+    <body onresize="moveCheese()">
+        <table cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td>
+                    <table cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td id="score">Score:<p id="score_value"></p></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table cellspacing="0" cellpadding="0" align="right">
+                        <tr>
+                            <td id="time">Time:<p id="time_value"></p></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- Move cheese whenever mouse touches it -->
+        <img id="cheese" class="cheese" onmouseover="scoreAndMoveCheese()"
+             src="https://img.icons8.com/doodle/48/000000/cheese--v1.png"/>
+        <script>
+            //set initial positioning of cheese
+            moveCheese();
+            updateDisplaysForTimeAndScore();
+        </script>
+    </body>
+</html>
