@@ -1,6 +1,6 @@
 //
 var ChhcsFinalExam2020 = {
-  title: "CHHCS - Web Applications and Cloud Computer - Final Exam for School Year 2020",
+  title: "CHHCS - Web Applications and Cloud Computer - Final Exam for School Year 2019-2020",
   sections: []
 };
 var satMath = {
@@ -113,12 +113,15 @@ function formatRightAnswer(template, candidateAnswerZero) {
   return template;
 }
 function constructQuestion(sectionId, question, preamble, sectionAbbreviation, currentQuestion) {
-  constructPartPreamble(sectionId, preamble, sectionAbbreviation, currentQuestion, currentQuestion);
+  if (preamble) {
+    constructPartPreamble(sectionId, preamble, sectionAbbreviation, currentQuestion, currentQuestion);
+  }
   //
   var template = getTemplate(question);
   var sectionElement = $('#' + sectionId);
   var div = document.createElement( "div" );
   $(sectionElement).append(div);
+  $(div).addClass("question");
   $(div).text(sectionAbbreviation + "." + currentQuestion + " "
     + formatRightAnswer(template, getCandidateAnswers(question)[0]));
 }
@@ -127,8 +130,22 @@ function constructPartPreamble(sectionId, preamble, sectionAbbreviation, startQu
     var reference = preamble.reference;
     var body = preamble.body;
     var compositePreamble = (reference ? reference : []).concat((body ? body : []));
+    console.log("ZZZ sectionId - " + sectionId);
     var sectionElement = $('#' + sectionId);
+    //
+    var preambleHeader = document.createElement( "div" );
+    $(preambleHeader).addClass("preambleHeader");
+    if (startQuestion == endQuestion) {
+      $(preambleHeader).text("Consider the following information for question "
+        + sectionAbbreviation + "." + startQuestion + " -");
+    } else {
+      $(preambleHeader).text("Consider the following information for questions "
+        + sectionAbbreviation + "." + startQuestion + " to " + sectionAbbreviation + "." + endQuestion + " -");
+    }
+    $(sectionElement).append(preambleHeader);
+    //
     var div = document.createElement( "div" );
+    $(div).addClass("preamble");
     $(sectionElement).append(div);
     for (var i = 0; i < compositePreamble.length; i++) {
       if (i > 0) {
@@ -144,10 +161,10 @@ function constructPartPreamble(sectionId, preamble, sectionAbbreviation, startQu
 function constructPart(sectionId, part, sectionAbbreviation, processedQuestionCount) {
   var questions = getQuestions(part);
   if (getQuestionCount(questions) > 1) {
-    constructPartPreamble(sectionId, getPartPreamble(preamble), sectionAbbreviation,
+    constructPartPreamble(sectionId, getPartPreamble(part), sectionAbbreviation,
       processedQuestionCount + 1, processedQuestionCount + getQuestionCount(questions));
     for (var i = 0; i < getQuestionCount(questions); i++) {
-      constructQuestion(getQuestion(0), null,
+      constructQuestion(sectionId, getQuestion(questions, i), null,
         sectionAbbreviation, processedQuestionCount + 1 + i);
     }
   } else if (getQuestionCount(questions) == 1) {
