@@ -130,7 +130,6 @@ function constructPartPreamble(sectionId, preamble, sectionAbbreviation, startQu
     var reference = preamble.reference;
     var body = preamble.body;
     var compositePreamble = (reference ? reference : []).concat((body ? body : []));
-    console.log("ZZZ sectionId - " + sectionId);
     var sectionElement = $('#' + sectionId);
     //
     var preambleHeader = document.createElement( "div" );
@@ -147,15 +146,18 @@ function constructPartPreamble(sectionId, preamble, sectionAbbreviation, startQu
     var div = document.createElement( "div" );
     $(div).addClass("preamble");
     $(sectionElement).append(div);
+    //
+    var pre = document.createElement( "pre" );
+    $(div).append(pre);
+    var preambleText = "";
     for (var i = 0; i < compositePreamble.length; i++) {
       if (i > 0) {
-        var br = document.createElement( "br" );
-        $(div).append(br);
+        preambleText = preambleText + "\n";
       }
-      var span = document.createElement( "span" );
-      $(div).append(span);
-      $(span).text(compositePreamble[i]);
+      preambleText = preambleText + compositePreamble[i];
     }
+    $(pre).addClass("preamble");
+    $(pre).text(preambleText);
   }
 }
 function constructPart(sectionId, part, sectionAbbreviation, processedQuestionCount) {
