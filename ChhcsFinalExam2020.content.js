@@ -223,33 +223,33 @@ addPartToMath(
       "</html>"
     ]),
   [
-     createSingleQuestion(
-       "The contents written within 'style' tags are written in %s language.",
-       [
-         ["CSS (Cascading Style Sheet)"],
-         ["JavaScript"],
-         ["SO (Styling Overdraft)"],
-         ["FT (Font Transform)"],
-         ["HA (HTML Arrangement)"]
-       ]),
-     createSingleQuestion(
-       "For an HTML element, the value of its 'id' attribute %s.",
-       [
-         ["shouldn't be shared by any other element on the web page"],
-         ["should be shared by other elements on the web page"],
-         ["should always be a number"],
-         ["must be in hexadecimal"],
-         ["should be encrypted"]
-       ]),
-     createSingleQuestion(
-       "The 'p.blue_text' declaration means that all 'p' tags %s will display their text in blue.",
-       [
-         ["with 'class=\"blue_text\"'"],
-         ["without 'class=\"blue_text\"'"],
-         ["with 'class=\"blue_text\"' but without an 'id' attribute"],
-         ["with 'id' attribute equaling 'A'"],
-         ["without exception"]
-       ])
+    createSingleQuestion(
+      "The contents written within 'style' tags are written in %s language.",
+      [
+        ["CSS (Cascading Style Sheet)"],
+        ["JavaScript"],
+        ["SO (Styling Overdraft)"],
+        ["FT (Font Transform)"],
+        ["HA (HTML Arrangement)"]
+      ]),
+    createSingleQuestion(
+      "For an HTML element, the value of its 'id' attribute %s.",
+      [
+        ["shouldn't be shared by any other element on the web page"],
+        ["should be shared by other elements on the web page"],
+        ["should always be a number"],
+        ["must be in hexadecimal"],
+        ["should be encrypted"]
+      ]),
+    createSingleQuestion(
+      "The 'p.blue_text' declaration means that all 'p' tags %s will display their text in blue.",
+      [
+        ["with 'class=\"blue_text\"'"],
+        ["without 'class=\"blue_text\"'"],
+        ["with 'class=\"blue_text\"' but without an 'id' attribute"],
+        ["with 'id' attribute equaling 'A'"],
+        ["without exception"]
+      ])
   ]
 );
 addSingleQuestionToMath(
@@ -348,25 +348,195 @@ addSingleQuestionToMath(
     []
   ]
 );
-//XML
-//HTML
-//CSS
-//catch the cheese
-//rock, paper, scissors
-//div tag
-//hyperlinks
-//DOM
-//AWS Services - Including S3
-//Advantages of Cloud Computing
-//Git shouldn't include library files and media and compiled code
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following JavaScript function -",
+      "",
+      "function getWeatherForecast(cloudCoveragePercentage) {",
+      "  if (cloudCoveragePercentage < 10) {",
+      "    return \"sunny\";",
+      "  } else if (cloudCoveragePercentage < 40) {",
+      "    return \"partly cloudy\";",
+      "  } else if (cloudCoveragePercentage < 75) {",
+      "    return \"mostly cloudy\";",
+      "  } else {",
+      "    return \"cloudy\";",
+      "  }",
+      "}"
+    ]),
+  [
+    createSingleQuestion(
+      "If 'cloudCoveragePercentage' equals %s, then this function will return \"%s\".",
+      [
+        ["5", "sunny"],
+        ["5", "mostly cloudy"],
+        ["60", "sunny"],
+        ["60", "cloudy"],
+        ["60", "partly cloudy"]
+      ]),
+    createSingleQuestion(
+      "If 'cloudCoveragePercentage' equals %s, then this function will return \"%s\".",
+      [
+        ["60", "mostly cloudy"],
+        ["60", "sunny"],
+        ["60", "cloudy"],
+        ["5", "cloudy"],
+        ["5", "partly cloudy"]
+      ]),
+    createSingleQuestion(
+      "If 'cloudCoveragePercentage' equals %s, then this function will return \"%s\".",
+      [
+        ["90", "cloudy"],
+        ["90", "sunny"],
+        ["90", "cloudy"],
+        ["35", "cloudy"],
+        ["35", "sunny"]
+      ])
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following JavaScript function -",
+      "",
+      "function getRandomWholeNumberUnder(range) {",
+      "    return Math.floor(Math.random()*range);",
+      "}"
+    ]),
+  [
+    createSingleQuestion(
+      "The function 'Math.random()' returns a random number from %s.",
+      [
+        ["0 up to but not including 1"],
+        ["1 up to infinity"],
+        ["negative infinity to infinity"],
+        ["0 to infinity"],
+        ["0 up to but not including 10"]
+      ]),
+    createSingleQuestion(
+      "'Math.floor(0)', 'Math.floor(1.1)', 'Math.floor(7.99)', and 'Math.floor(8.5) will return %s, %s, %s, and %s, respectively'.",
+      [
+        ["0", "1", "7", "8"],
+        ["0", "0", "0", "0"],
+        ["0", "1", "8", "8"],
+        ["0", "1", "8", "9"],
+        ["0", "2", "8", "9"]
+      ]),
+    createSingleQuestion(
+      "If 'range' has a value of 10, this function will return %s.",
+      [
+        ["a random whole number (no decimal) between 0 and 9"],
+        ["a random whole number (no decimal) between 1 and 9"],
+        ["a random decimal between 0 and up to but not including 10"],
+        ["a random whole number (no decimal) between 0 and 10"],
+        ["a random decimal between 0 and up to but not including 9"]
+      ])
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following HTML file -",
+      "",
+      "<html>",
+      "  <head>",
+      "  </head>",
+      "  <body>",
+      "    <img id=\"p\" onclick=\"console.log('Welcome')\"/>",
+      "    <div id=\"m\"/>",
+      "    <script>",
+      "      document.getElementById('p').src = 'https://www.si.edu/sites/default/files/historic-castle-400.jpg';",
+      "      document.getElementById('m').innerHTML = 'Hello Friends!';",
+      "    </script>",
+      "  </body>",
+      "</html>"
+    ]),
+  [
+    createSingleQuestion(
+      "The above JavaScript statements will %s and %s.",
+      [
+        ["display a picture of a castle", "display 'Hello Friends!' on the web page"],
+        ["downloads text about a castle", "display 'Hello Friends!' on the web page"],
+        ["downloads text about a castle", "open a pop-up window"],
+        ["downloads text about a castle", "set the page title to 'Hello Friends!'"],
+        ["display a picture of a castle", "set the page title to 'Hello Friends!'"]
+      ]),
+    createSingleQuestion(
+      "In Chrome, clicking the mouse on the %s will display 'Welcome' %s.",
+      [
+        ["picture", "in Developer Tools"],
+        ["text", "in a pop-up window"],
+        ["text", "in the page title"],
+        ["text", "just after 'Hello Friends!'"],
+        ["picture", "in a pop-up window'"]
+      ])
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following JavaScript statement -",
+      "",
+      "var person = {",
+      "  \"name\": \"Prince Harry\",",
+      "  \"hairColor\": \"red\",",
+      "  \"isWorkday\": function(dayOfWeek) {",
+      "    return (dayOfWeek != \"Saturday\" && dayOfWeek != \"Sunday\");",
+      "  },",
+      "  \"royalty\": true,",
+      "  \"yearOfBirth\": 1984,",
+      "  \"siblings\": [",
+      "    {",
+      "      \"name\": \"Prince William\"",
+      "    }",
+      "  ],",
+      "};"
+    ]),
+  [
+    createSingleQuestion(
+      "'console.log(person.name)' + will print '%s'.",
+      [
+        ["Prince Harry"],
+        ["red"],
+        ["[string]"],
+        ["undefined"],
+        ["person"]
+      ]),
+    createSingleQuestion(
+      "'console.log(\"I \" + ((person.royalty)? \"am\" : \"am not\") + \" royalty.\")' will print '%s'",
+      [
+        ["I am royalty."],
+        ["I am not royalty."],
+        ["[string]"],
+        ["undefined"],
+        ["true"]
+      ]),
+    createSingleQuestion(
+      "'console.log(person.siblings.length)' will print '%s'.",
+      [
+        ["1"],
+        ["0"],
+        ["14"],
+        ["4"],
+        ["undefined"]
+      ]),
+    createSingleQuestion(
+      "'console.log(person.isWorkday(\"Wednesday\"))' will print '%s'.",
+      [
+        ["true"],
+        ["Wednesday"],
+        ["Saturday"],
+        ["Sunday"],
+        ["undefined"]
+      ])
+  ]
+);
 //advantages of libraries
-//benefits of Git
-//basic git commands
-////CSS
-////JavaScript
-//if-else statement
-//manipulating DOM
-//JavaScript events
 //Verbal
 addPartToVerbal(
   createPreamble(
