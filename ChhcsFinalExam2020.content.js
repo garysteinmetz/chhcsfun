@@ -690,6 +690,17 @@ addSingleQuestionToMath(
     ["localhost", "client"]
   ]
 );
+addSingleQuestionToMath(
+  null,
+  "The '%s' command will make %s, but won't %s.",
+  [
+    ["curl", "HTTP calls just like a browser", "present the responses in a format that people can interact with"],
+    ["snarl", "sounds", "speak"],
+    ["snarl", "new files", "delete old ones"],
+    ["snarl", "files smaller", "remove content"],
+    ["curl", "files smaller", "remove content"]
+  ]
+);
 addPartToMath(
   createPreamble(
     null,
@@ -814,6 +825,232 @@ addSingleQuestionToMath(
     ["Habits", "standardizing"],
     ["Rentals", "classifying"],
     ["Qubits", "simplifying"],
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "Node.js, the %s version of JavaScript, uses 'npm' to organize projects and prevent '%s'.",
+  [
+    ["non-browser", "cowboy coding"],
+    ["commercial", "public distribution"],
+    ["Windows", "tampering"],
+    ["Java", "type errors"],
+    ["Unix", "vendor lock-in"],
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "The 'npm install express --save' command will %s.",
+  [
+    ["downloads the 'express' (web server library) and indicates that the project depends on it in the 'package.json' file"],
+    ["quickly completes the installation of 'npm' and saves the configuration file to repeat the installation"],
+    ["uploads the 'express' library to a Maven repository"],
+    ["open up a command prompt to enter JavaScript commands"],
+    ["install files that improve the speed of 'npm'"],
+  ]
+);
+//https://jsonplaceholder.typicode.com/todos/1
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider these contents at https://jsonplaceholder.typicode.com/todos/1 -",
+      "",
+      "{",
+      "  \"userId\": 1,",
+      "  \"id\": 1,",
+      "  \"title\": \"delectus aut autem\",",
+      "  \"completed\": false",
+      "}",
+      "",
+      "Consider this jQuery statement -",
+      "",
+      "$(document).ready(function() {",
+      "  $.get(",
+      "    {",
+      "      url: \"https://jsonplaceholder.typicode.com/todos/1\",",
+      "      success: function(data, status) {",
+      "        console.log(data.title);",
+      "      }",
+      "    }",
+      "  );",
+      "});"
+    ]),
+  [
+    createSingleQuestion(
+      "It will make %s call %s the page is downloaded.",
+      [
+        ["an AJAX (Asynchronous JavaScript and XML)", "after"],
+        ["an AJAX (Asynchronous JavaScript and XML)", "before"],
+        ["RAM (Random Access Memory)", "after"],
+        ["RAM (Random Access Memory)", "before"],
+        ["RAM (Random Access Memory)", "while"]
+      ]),
+    createSingleQuestion(
+      "If the call %s, it will %s.",
+      [
+        ["is successful", "print 'delectus aut autem'"],
+        ["is successful", "print '1'"],
+        ["is successful", "print a string representation of a JSON object"],
+        ["fails", "print 'delectus aut autem'"],
+        ["fails", "print a string representation of a JSON object"]
+      ]),
+    createSingleQuestion(
+      "This class of call allows a browser %s.",
+      [
+        ["to update a web page and send client actions to a server without reloading the whole web page"],
+        ["to update a web page and send client actions to a server causing the whole web page to reload"],
+        ["wait for user input"],
+        ["open tabs without the user's permission"],
+        ["to send client actions to a server causing the whole web page to reload"]
+      ])
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following Java program -",
+      "",
+      "public class sample12 {",
+      "  public static void main(String[] args) {",
+      "    System.out.println(\"Hello World!\");",
+      "  }",
+      "}"
+    ]),
+  "This program will %s but it highlights %s.",
+  [
+    ["print 'Hello World!'", "a common complaint that Java requires 'too much ceremony' to get anything done"],
+    ["crash", "the robustness of Java"],
+    ["fail to compile because of missing libraries", "the modularity of the Java language"],
+    ["send a message to a queue", "the simplicity of Java"],
+    ["hang", "the power of Java"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "For a Spring Boot project, running the Maven command 'clean package spring-boot:repackage' will %s.",
+  [
+    ["create a ready-to-run 'fat JAR' containing everything necessary (including libraries) to run an application"],
+    ["create a ready-to-run 'fat JAR' containing everything necessary (except libraries) to run an application"],
+    ["create a specification file that other languages to use to interface with the application"],
+    ["delete the application from source control"],
+    ["deploy the application to a production server"]
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider these Spring Boot classes which are running on a local server with base URL http://localhost:8080 -",
+      "",
+      "//Class 1",
+      "package com.example.demo;",
+      "",
+      "import org.springframework.stereotype.Service;",
+      "",
+      "@Service",
+      "public class SuperComputer {",
+      "    public int addNumbers(int numberOne, int numberTwo) {",
+      "        return numberOne + numberTwo;",
+      "    }",
+      "}",
+      "",
+      "//Class 2",
+      "package com.example.demo;",
+      "",
+      "import org.springframework.beans.factory.annotation.Autowired;",
+      "import org.springframework.stereotype.Controller;",
+      "import org.springframework.web.bind.annotation.GetMapping;",
+      "import org.springframework.web.bind.annotation.RequestParam;",
+      "import org.springframework.web.bind.annotation.ResponseBody;",
+      "",
+      "@Controller",
+      "public class DemoController {",
+      "",
+      "    @Autowired",
+      "    SuperComputer superComputer;",
+      "",
+      "    @GetMapping(\"/addNumbers\")",
+      "    @ResponseBody",
+      "    public String addNumbers(",
+      "            @RequestParam(name = \"numberOne\") int numberOne,",
+      "            @RequestParam(name = \"numberTwo\") int numberTwo) {",
+      "        return \"The answer to your question is \"",
+      "                + superComputer.addNumbers(numberOne, numberTwo);",
+      "    }",
+      "}"
+    ]),
+  [
+    createSingleQuestion(
+      "If 'http://localhost:8080/addNumbers?numberOne=5&numberTwo=2' is entered into the browser address bar, it will display %s.",
+      [
+        ["'The answer to your question is 7'"],
+        ["nothing"],
+        ["a JSON object"],
+        ["an error message"],
+        ["'The answer to your question is null'"]
+      ]),
+    createSingleQuestion(
+      "The '@Autowired' annotation is an example of '%s' which has the advantages of %s.",
+      [
+        ["inversion of control", "clearer code and making components more interchangeable"],
+        ["inversion of control", "reducing licensing fees"],
+        ["inversion of control", "users in control of the system"],
+        ["self-documenting code", "generating documentation and specifications for web services"],
+        ["self-documenting code", "will generate the functionality of 'SuperComputer' from specifications"]
+      ])
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider this class -",
+      "",
+      "package com.example.demo;",
+      "",
+      "import org.junit.jupiter.api.Assertions;",
+      "import org.junit.jupiter.api.Test;",
+      "import org.mockito.Mockito;",
+      "",
+      "import static org.mockito.ArgumentMatchers.eq;",
+      "import static org.mockito.Mockito.when;",
+      "",
+      "public class DemoControllerTest {",
+      "    @Test",
+      "    public void testController() {",
+      "        //",
+      "        SuperComputer superComputer = Mockito.mock(SuperComputer.class);",
+      "        when(superComputer.addNumbers(eq(1), eq(2))).thenReturn(3);",
+      "        //",
+      "        DemoController demoController = new DemoController();",
+      "        demoController.superComputer = superComputer;",
+      "        //",
+      "        String response = demoController.addNumbers(1, 2);",
+      "        Assertions.assertEquals(\"The answer to your question is 3\", response);",
+      "    }",
+      "}"
+    ]),
+  [
+    createSingleQuestion(
+      "This class is a %s for the %s class.",
+      [
+        ["unit test", "DemoController"],
+        ["unit test", "SuperComputer"],
+        ["live test", "DemoController"],
+        ["live test", "SuperComputer"],
+        ["load test", "SuperComputer"]
+      ]),
+    createSingleQuestion(
+      "The %s class is %s.",
+      [
+        ["SuperComputer", "mocked (like a crash test dummy)"],
+        ["DemoController", "mocked (like a crash test dummy)"],
+        ["SuperComputer", "instantiated (an actual super computer is used)"],
+        ["Assertions", "mocked (like a crash test dummy)"],
+        ["DemoControllerTest", "mocked (like a crash test dummy)"]
+      ])
   ]
 );
 //Verbal
