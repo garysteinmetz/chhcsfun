@@ -536,7 +536,286 @@ addPartToMath(
       ])
   ]
 );
-//advantages of libraries
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following JavaScript statements -",
+      "",
+      "var a = /^hello/;",
+      "console.log(a.test('hello there'));",
+      "console.log(a.test('hi and good morning'));"
+    ]),
+  "The variable 'a' represents %s which is quite useful for %s, these statements will print %s.",
+  [
+    ["a regular expression", "pattern matching", "'true' then 'false'"],
+    ["a regular expression", "pattern matching", "'false' then 'true'"],
+    ["assortment", "pattern matching", "'true' twice"],
+    ["assortment", "pattern matching", "'false' twice"],
+    ["a regular expression", "hashing", "two hexadecimal numbers"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "In software development, libraries are %s used because they %s.",
+  [
+    ["heavily", "save time, improve quality, new team members require less training"],
+    ["hardly", "save time, improve quality, new team members require less training"],
+    ["heavily", "software departments have an incentive to spend their budgets"],
+    ["hardly", "software engineers want to have full control over all aspects of the application"],
+    ["hardly", "slow down the build process"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "While libraries %s, frameworks (like %s) %s.",
+  [
+    ["assist developers in getting something done", "React and Angular", "direct developers how it will be done"],
+    ["make software development harder", "Lodash", "make it easier"],
+    ["make software development harder", "React and Angular", "make it easier"],
+    ["are hard to learn", "Lodash", "are easier to learn"],
+    ["are hard to learn", "React and Angular", "are easier to learn"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "Concerning software projects, business requirements %s while technical specifications %s.",
+  [
+    ["state what should be done", "how it will be done"],
+    ["identify budget", "determine budget allocation"],
+    ["largely ignored by everyone", "determine where coding will take place"],
+    ["are written by MBAs", "are written by PhDs"],
+    ["are supposed to be written after project completion", "should be approved before a project starts"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "Wireframes provide a %s to understand %s in a proposed application.",
+  [
+    ["simplified picture of how a web page should look and are used", "what's important and missing"],
+    ["simplified picture of how a web page should look and are used", "how to code"],
+    ["tutorial", "how to code"],
+    ["schedule", "time commitments"],
+    ["statement of work", "budget allocation"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "For larger software projects involving several teams, it's important that everyone %s.",
+  [
+    ["generally agrees about its goals and deliverables"],
+    ["wears the same uniform"],
+    ["went to the same school"],
+    ["stops work at the same time of day"],
+    ["agrees to use tabs or spaces for indentation"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "%s are the hardware components on machines that allow %s and each one is assigned %s.",
+  [
+    ["Network Interface Cards (NICs)", "them to communicate over the Internet", "a 12-digit hexadecimal number"],
+    ["No Intruder Cards (NICs)", "them prevent security breaches", "a 12-digit hexadecimal number"],
+    ["Network Interface Cards (NICs)", "them to communicate over the Internet", "a 5-digit numbers"],
+    ["No Intruder Cards (NICs)", "them prevent security breaches", "a 5-digit numbers"],
+    ["No Intruder Cards (NICs)", "them prevent security breaches", "encrypted passwords"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "Hexadecimal is a lot like decimal, %s each digit position is %s the one that proceeded it with letters %s representing numbers %s, respectively.",
+  [
+    ["except that", "16 times greater than ", "A, B, C, D, E, and F", "10, 11, 12, 13, 14, and 15"],
+    ["except that", "12 times greater than ", "A and B", "10 and 11"],
+    ["with", "still being 10 times greater than", "5, 6, 7, 8, 9, and 15", "A, B, C, D, E, and F"],
+    ["except that", "8 times greater than ", "A, B, C, D, E, F, G, and H", "0, 1, 2, 3, 4, 5, 6, and 7"],
+    ["except that", "14 times greater than ", "A, B, C, and D", "10, 11, 12, and 13"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "DHCP is a protocol that assigns %s to %s.",
+  [
+    ["an IP address", "a NIC"],
+    ["a NIC", "a computer"],
+    ["a screen", "a computer"],
+    ["an email address", "a user account"],
+    ["a printer", "the network"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "The command 'ipconfig -a' on Windows ('ifconfig -a' on Mac/Linux) lists %s including '%s' which is a special IP address meaning '%s'.",
+  [
+    ["a machine's network configuration settings", "127.0.0.1 (loopback address)", "this machine"],
+    ["a machine's network configuration settings", "192.168.0.0 (loopback address)", "this machine"],
+    ["a machine's network configuration settings", "192.168.0.0 (loopback address)", "network gateway"],
+    ["a machine's network configuration settings", "admin.reset", "restart gateway"],
+    ["directory contents", "/etc/hosts", "IP address index"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "The command '%s google.com' will %s 'google.com'.",
+  [
+    ["nslookup", "print the IP address of domain name"],
+    ["sendcookies", "send cookies to"],
+    ["getcookies", "get cookies from"],
+    ["synccookies", "both send cookies to and receive cookies from"],
+    ["restrictip", "prevent access to"]
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following diagram where a browser searches for 'weather' and the search engine then contacts the National Weather Service to get weather information to send back to the browser -",
+      "",
+      "Browser",
+      "  -- Search 'weather' -->",
+      "                       Search Engine",
+      "                         -- Get weather forecast -->",
+      "                                                  National Weather Service",
+      "                         <--   Weather forecast   --",
+      "                       Search Engine",
+      "  <-- Weather HTML Page --",
+      "Browser"
+    ]),
+  "When receiving the request from the browser, the search engine acts as a %s. When making the request to the National Weather Service, the search engine acts as a %s.",
+  [
+    ["server", "client"],
+    ["localhost", "server"],
+    ["client", "client"],
+    ["client", "server"],
+    ["localhost", "client"]
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider what would happen when entering in the following URL into a browser's address bar -",
+      "",
+      "https://www.google.com:443/search?q=best+songs+by+Hall+%26+Oates"
+    ]),
+  [
+    createSingleQuestion(
+      "The browser will use the HTTPS protocol (%s) to call the %s for 'www.google.com'.",
+      [
+        ["the encrypted version of HTTP", "IP address"],
+        ["the unencrypted version of HTTP", "mock server"],
+        ["the unencrypted version of HTTP", "gateway"],
+        ["the unencrypted version of HTTP", "cloud"],
+        ["the unencrypted version of HTTP", "MAC address"]
+      ]),
+    createSingleQuestion(
+      "The ':443' part of the URL refers to the target %s which %s necessary because %s is the default %s for HTTP",
+      [
+        ["port", "isn't", "443", "port"],
+        ["port", "is", "80", "port"],
+        ["caching strategy", "is", "80", "caching strategy"],
+        ["timeout setting", "isn't", "443", "timeout setting"],
+        ["timeout setting", "is", "80", "timeout setting"]
+      ]),
+    createSingleQuestion(
+      "If the '/search' %s and 'q' %s are the correct way to perform a search, this URL will search for '%s'.",
+      [
+        ["path", "query parameter", "best songs by Hall & Oates"],
+        ["path", "query parameter", "best+songs+by+Hall+%26+Oates"],
+        ["query parameter", "path", "best songs by Hall & Oates"],
+        ["query parameter", "path", "best+songs+by+Hall+%26+Oates"],
+        ["query parameter", "path", "best+songs+by+Hall+&+Oates"]
+      ])
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "The four major 'CRUD' ('%s') operations for HTTP are in order %s, with %s by far being the most common for casual browser usage.",
+  [
+    ["Create, Read, Update, Delete", "Post, Get, Put, and Delete", "Get"],
+    ["Create, Read, Update, Delete", "Post, Get, Put, and Delete", "Put"],
+    ["Curl, Rest, Undo, Dismiss", "Post, Get, Put, and Delete", "Get"],
+    ["Curl, Rest, Undo, Dismiss", "Create, Read, Update, and Delete", "Delete"],
+    ["Curl, Rest, Undo, Dismiss", "Create, Read, Update, and Delete", "Update"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "After downloading the web page, if it references other internet files like media, JavaScript, and CSS, the browser will %s.",
+  [
+    ["immediately make individual HTTP calls to get those things"],
+    ["not render the page at all (page will be blank)"],
+    ["close"],
+    ["present a menu of options"],
+    ["open a tab"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "Both HTTP requests and responses %s include %s.",
+  [
+    ["can", "headers and a body"],
+    ["can", "headers but not a body"],
+    ["can", "a body but not headers"],
+    ["can't", "headers and a body"],
+    ["can't", "text"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "%s of '%s' and '%s' correspond to %s and %s, respectively.",
+  [
+    ["Mime types", "text/html", "application/json", "HTML", "JSON"],
+    ["Encryption types", "text/html", "application/json", "HTML", "JSON"],
+    ["Mime types", "microsoft/word", "application/json", "Word", "JavaScript"],
+    ["Encryption types", "microsoft/word", "application/json", "Word", "JavaScript"],
+    ["Computer types", "microsoft/word", "application/json", "Word", "JavaScript"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "An HTTP response code from 200-299 indicates %s, with 200 meaning '%s'.",
+  [
+    ["Success", "OK"],
+    ["Success", "Defined"],
+    ["Failure", "Error"],
+    ["Failure", "Rejection"],
+    ["Failure", "Unauthorized"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "An HTTP response code from 400-499 indicates %s, with 400, 401, 403, and 404 meaning '%s', '%s', '%s', and '%s', respectively.",
+  [
+    ["Client Error", "Bad Request", "Unauthorized", "Forbidden", "Not Found"],
+    ["Server Error", "Bad Gateway", "No Response", "Busy", "Unexpected Error"],
+    ["Success", "OK", "Done", "No Content", "Accepted"],
+    ["Server Error", "Bad Request", "Unauthorized", "Forbidden", "Not Found"],
+    ["General Error", "Bad Gateway", "No Response", "Busy", "Unexpected Error"],
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "An HTTP response code from 500-599 indicates %s, with 500 meaning '%s' (%s).",
+  [
+    ["Server Error", "Internal Server Error", "commonly used to indicate an unexpected problem, like a software bug"],
+    ["Client Error", "Bad Request", "like invalid input"],
+    ["Failure", "Bad Certificate", "self-signed"],
+    ["Success", "OK", "call was successful"],
+    ["General Error", "Unknown Cause", "to be determined"],
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "%s are a way of %s HTTP calls.",
+  [
+    ["Cookies", "maintaining state and session between"],
+    ["Targets", "specializing"],
+    ["Habits", "standardizing"],
+    ["Rentals", "classifying"],
+    ["Qubits", "simplifying"],
+  ]
+);
 //Verbal
 addPartToVerbal(
   createPreamble(
