@@ -1053,6 +1053,193 @@ addPartToMath(
       ])
   ]
 );
+addSingleQuestionToMath(
+  null,
+  "Regarding the running of applications, the prime %s of using Docker %s.",
+  [
+    ["advantages", "include consistent setup and scalability"],
+    ["disadvantage", "is Windows vendor lock-in"],
+    ["goal", "is reliable encryption"],
+    ["substructures", "compartments and a containment field"],
+    ["business benefits", "include greater market share and profit margins"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "In Docker, an image is a blueprint for %s and a container is a %s.",
+  [
+    ["running an application on a virtual operating system", "running instance of an image"],
+    ["creating an architectural diagram of computer", "a group of images"],
+    ["creating media files", "a group of images"],
+    ["the authorization certificate and its public-key signature", "web server that uses them"],
+    ["managing costs", "web server that gives current information on financing"]
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following file -",
+      "",
+      "FROM adoptopenjdk/openjdk11:jdk-11.0.7_10-alpine",
+      "COPY target/demo-0.0.1-SNAPSHOT.jar .",
+      "CMD java -jar demo-0.0.1-SNAPSHOT.jar"
+    ]),
+  [
+    createSingleQuestion(
+      "This file is a %s which is used to create Docker %s.",
+      [
+        ["Dockerfile", "images"],
+        ["Dockerfile", "containers"],
+        ["pom.xml", "containers"],
+        ["Makefile", "images"],
+        ["Makefile", "containers"],
+      ]
+    ),
+    createSingleQuestion(
+      "This will %s.",
+      [
+        ["select a Java-enabled operating system, add a Java application to it, then run that application"],
+        ["compile a Java program then run it locally"],
+        ["use Windows to spawn a subprocess that will compile the Java application and upload it for others to use"],
+        ["select Alpine Linux then run several Unix commands in it"],
+        ["do nothing"],
+      ]
+    )
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "The Unix commands 'cd .', 'cd ..', 'cd ~', and 'cd /' will change the shell's current directory to %s.",
+  [
+    ["the current directory (no change), the parent directory, the user's home directory, and the root directory, respectively"],
+    ["the parent directory, the current directory (no change), the user's home directory, and the root directory, respectively"],
+    ["the user's home directory, the current directory (no change), the parent directory, and the root directory, respectively"],
+    ["the root directory, the current directory (no change), the parent directory, and the user's home directory, respectively"]
+    ["the parent directory, the parent directory, the user's home directory, and the root directory, respectively"],
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the consequences of running the following two Unix commands -",
+      "",
+      "export FOOD=pizza",
+      "echo \"My favorite food is ${FOOD}\""
+    ]),
+  "These commands will print 'My favorite food is pizza' using the 'FOOD' %s. Using %s is a common way of customizing the same %s for different situations.",
+  [
+    ["environment variable", "environment variables", "Docker image"],
+    ["Java property", "Java properties", "Docker image"],
+    ["request parameter", "request parameters", "certificate"],
+    ["request header", "request headers", "certificate"],
+    ["stack entry", "stack entries", "certificate"]
+  ]
+);
+addSingleQuestionToMath(
+  createPreamble(
+    null,
+    [
+      "Consider the following file -",
+      "",
+      "STUDENT_NAME,AGE,GRADE",
+      "Sally,16,B",
+      "Ahmad,17,A",
+      "Jane,16,A+",
+      "Chin,16,B-"
+    ]),
+  "This is a %s file which is good for %s.",
+  [
+    ["CSV (Comma-Separated Value)", "transferring data between unrelated systems"],
+    ["CSV (Comma-Separated Value)", "formatting text with unusual characters"],
+    ["tab-delimited", "presenting data in such a way that it isn't obvious"],
+    ["tab-delimited", "formatting text with unusual characters"],
+    ["CSV (Comma-Separated Value)", "presenting data in such a way that it isn't obvious"]
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "The %s value of a database entry is what %s it.",
+  [
+    ["primary key", "uniquely identifies"],
+    ["foreign key", "uniquely identifies"],
+    ["foreign key", "deletes"],
+    ["foreign key", "copies"],
+    ["primary key", "copies"]
+  ]
+);
+addPartToMath(
+  createPreamble(
+    null,
+    [
+      "In MySQL the following two tables have been created -",
+      "",
+      "CREATE TABLE accounts (",
+      "    id MEDIUMINT NOT NULL,",
+      "    name CHAR(30) NOT NULL,",
+      "    PRIMARY KEY (id)",
+      ");",
+      "",
+      "CREATE TABLE transactions (",
+      "    amount DECIMAL(6,2) NOT NULL,",
+      "    account_id MEDIUMINT NOT NULL,",
+      "    FOREIGN KEY (account_id)",
+      "        REFERENCES accounts(id)",
+      ");",
+      "",
+      "You successfully issue all of the following SQL commands -",
+      "SET autocommit = 0;",
+      "INSERT INTO accounts(id, name) values (1, 'Gary');",
+      "INSERT INTO transactions(amount, account_id) VALUES (100, 1);",
+      "INSERT INTO transactions(amount, account_id) VALUES (-9, 1);",
+      "commit;",
+      "select SUM(amount) from accounts, transactions where accounts.id = transactions.account_id and accounts.name = 'Gary';"
+    ]),
+  [
+    createSingleQuestion(
+      "This output of the '%s' statement will be %s.",
+      [
+        ["select", "91"],
+        ["commit", "91"],
+        ["select", "100"],
+        ["select", "-9"],
+        ["select", "0"],
+      ]
+    ),
+    createSingleQuestion(
+      "The 'from accounts, transactions' part of the 'select' statement represents a '%s'.",
+      [
+        ["table join"],
+        ["data jam"],
+        ["data merge"],
+        ["compound select"],
+        ["double aggregation"],
+      ]
+    ),
+    createSingleQuestion(
+      "The first 'INSERT INTO transactions' statement successfully executes but you immediately exit MySQL. The data added by that 'INSERT' statement will %s.",
+      [
+        ["not be saved in the database and it won't be visible to anyone because the 'commit' statement wasn't issued"],
+        ["will be visible to everyone because all data from 'INSERT' statements are immediately visible to everyone"],
+        ["not be saved in the database and it won't be visible to anyone because the next 'INSERT' statement wasn't issued"],
+        ["not be saved in the database and it won't be visible to anyone because the 'SELECT' statement wasn't issued"],
+        ["not be saved in the database and it won't be visible to anyone because the table's permanence flag wasn't enabled"]
+      ]
+    )
+  ]
+);
+addSingleQuestionToMath(
+  null,
+  "In AWS DynamoDB, %s database, an optional field %s need to be defined at the time a table is created.",
+  [
+    ["a NoSQL", "does not"],
+    ["an SQL", "does not"],
+    ["a graph", "does not"],
+    ["a NoSQL", "does"],
+    ["an SQL", "does"]
+  ]
+);
 //Verbal
 addPartToVerbal(
   createPreamble(
