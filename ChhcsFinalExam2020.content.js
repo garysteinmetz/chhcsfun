@@ -1626,6 +1626,120 @@ addSingleQuestionToVerbal(
     ["wearing a new set of clothes can change people's opinion of you"]
   ]
 );
+addSingleQuestionToVerbal(
+  null,
+  "The Four Great Inventions of Chinese Civilization are %s, %s, %s, and %s.",
+  [
+    ["compass", "gunpowder", "printing press", "press"],
+    ["dancing", "storytelling", "sports", "drama"],
+    ["plow", "number zero", "stirrup", "irrigation"],
+    ["The Great Wall", "The Three Gorges Dam", "civil-service exams", "kites"],
+    ["light bulb", "steam engine", "semiconductors", "trial by jury"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "The Industrial Revolution was a sustained period of technological and economic progress which roughly started in %s and ended in about %s. It first happened in %s.",
+  [
+    ["1760", "1830", "England"],
+    ["1610", "1650", "England"],
+    ["1780", "1850", "America"],
+    ["1680", "1750", "England"],
+    ["1840", "1890", "Japan"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "When compared to other parts of the world, people living in Eurasia had the historic advantages of %s.",
+  [
+    ["many domesticable animal, a large east-west (similar climate) trading network, and greater exposure (therefore greater immunity) to disease"],
+    ["favorable climate for aircraft, massive deposits of gemstones and precious metals, and clearer visibility of the night sky (crucial for navigation)"],
+    ["closer to the Artic, closer to the Roman Empire, and closer to The Great Pyramids"],
+    ["higher percentage of the population were farmers, pine wood was especially useful, and the altitude tended to be higher"],
+    ["a history of poetry, mass adoption of the harpsichord, and Renaissance paintings"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "Compared with China, Europe was %s while also having %s.",
+  [
+    ["closer to the Americas", "greater geographic and political diversity"],
+    ["further from the Americas", "greater geographic and political diversity"],
+    ["closer to the Americas", "less geographic and political diversity"],
+    ["further from the Americas", "less geographic and political diversity"],
+    ["further from Africa", "greater geographic and political diversity"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "Compared to elsewhere, England had %s and %s just before it industrialized.",
+  [
+    ["cheap coal", "expensive labor"],
+    ["expensive coal", "expensive labor"],
+    ["cheap coal", "cheap labor"],
+    ["expensive coal", "cheap labor"],
+    ["cheap oil", "expensive labor"]
+  ]
+);
+addPartToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's Opinion (but teacher doesn't know everything!)",
+      "Title - How to Usefully Spend One's Early Adulthood",
+      "",
+      "Overall, for a tech career working at major corporations, teacher gave a rating breakdown of about 0.7 for Experiences, 0.3 for Family/Community, and 0.5 for Finances/Career .",
+      "",
+      "Individual experiences vary, but this rating breakdown is representative of a typical tech career working at major corporations.",
+    ]),
+  [
+    createSingleQuestion(
+      "'One has a budget of %s to distribute among each of these three domains with a maximum investment of %s in each.'",
+      [
+        ["1.5 units", "1 unit"],
+        ["1.5 units", "0.5 units"],
+        ["2 units", "1 units"],
+        ["2 units", "2 units"],
+        ["2 units", "1.5 units"]
+      ]),
+    createSingleQuestion(
+      "Regarding Experiences, the teacher assigned a value of 0.7 in part because %s.",
+      [
+        ["you meet people from different cultures, the work constantly challenges you and proves you wrong, and you work in organizations of different sizes and industries"],
+        ["you spend a lot of time working in the media industry and meeting with celebreties, you learn to speak foreign languages, and you take trips to exotic places to build internet infrastructure"],
+        ["you take lots of plane trips and each at high-end restaurants"],
+        ["you have a lot of freedom and independence when working in a corporate team"],
+        ["you work in skyscrapers which have spectacular vantage points"]
+      ]),
+    createSingleQuestion(
+      "Regarding Family/Community, the teacher assigned a value of 0.3 in part because %s.",
+      [
+        ["commute times are typically longer, work sometimes doesn't end after regular work hours, and harder to get back in labor force after leaving for an extended period"],
+        ["the work is generally unsafe and does long-term psychological damage, people are annoyed by the internet and don't want to talk to you, and future children are treated like robots instead of people"],
+        ["too much time is spent alone doing the work and it turns you into a recluse"],
+        ["the constant keyboard usage causes long-term musculoskeletal damage"],
+        ["you constantly work with offshore teams late into the evening and don't work normal daytime hours"]
+      ]),
+    createSingleQuestion(
+      "Regarding Finances/Career, the teacher assigned a value of 0.5 in part because %s.",
+      [
+        ["the initial pay is good but it tends to plateau, you have some flexibility to pivot to other corporate jobs, and there's increased competition from foreigners and no licensing requirements"],
+        ["you either hit it big at a startup or end up being paid below average"],
+        ["most every engineer eventually starts a business and the fortunes of that venture can vary"],
+        ["you will have a lower salary but a strong pension plan"],
+        ["engineers generally get paid in stock options which have various outcomes"]
+      ]),
+    createSingleQuestion(
+      "Regarding Finances/Career, the teacher assigned a value of 0.5 in part because %s.",
+      [
+        ["the initial pay is good but it tends to plateau, you have some flexibility to pivot to other corporate jobs, and there's increased competition from foreigners and no licensing requirements"],
+        ["you either hit it big at a startup or end up being paid below average"],
+        ["most every engineer eventually starts a business and the fortunes of that venture can vary"],
+        ["you will have a lower salary but a strong pension plan"],
+        ["engineers generally get paid in stock options which have various outcomes"]
+      ])
+  ]
+);
 //
 //"You don’t get what you deserve, you get what you negotiate."
 addSingleQuestionToVerbal(
