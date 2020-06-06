@@ -1436,6 +1436,199 @@ addPartToVerbal(
   ]
 );
 addSingleQuestionToVerbal(
+  null,
+  "Considering the Rule of 72, things having yearly compound interests of 2, 6, and 12 percent will double in size after %s, %s, and %s years, respectively.",
+  [
+    ["36", "12", "6"],
+    ["1", "2", "4"],
+    ["10", "5", "1"],
+    ["8", "4", "2"],
+    ["40", "25", "10"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote Attributed to Albert Einstein -"
+    ]),
+  "'Compound interest is %s.'",
+  [
+    ["the most powerful force in the universe"],
+    ["the path to riches"],
+    ["for egghead accountants, study physics instead"],
+    ["the fundamental difference between mass and energy"],
+    ["too simplistic for my mind"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.marketwatch.com/story/in-this-depressing-and-all-too-common- scenario-you-may-need-to-sock-away-44-of-your-income-for-retirement-2019-11-13"
+    ],
+    [
+      "Consider how much of your annual income that you would need to save to retire at a certain age with the same standard of living."
+    ]),
+  "For age 65, you would need to save %s if you started at age 25, %s if you started at age 35, and %s if you started at age 45.",
+  [
+    ["15%", "24%", "44%"],
+    ["10%", "30%", "50%"],
+    ["15%", "35%", "90%"],
+    ["20%", "25%", "30%"],
+    ["14%", "30%", "45%"]
+  ]
+);
+addPartToVerbal(
+  createPreamble(
+    null,
+    [
+      "Reference - Informed Opinion of Teacher"
+    ]),
+  [
+    createSingleQuestion(
+      "As of 2019, a typical annual salary for a %s in the Philadelphia area is around %s.",
+      [
+        ["senior software developer", "$120K"],
+        ["senior software developer", "$70K"],
+        ["senior software developer", "$300K"],
+        ["junior software developer", "$120K"],
+        ["senior software developer", "$200K"]
+      ]),
+    createSingleQuestion(
+      "About %s of CS degree holders are no longer programming by age %s.",
+      [
+        ["80%", "40"],
+        ["80%", "25"],
+        ["20%", "60"],
+        ["20%", "40"],
+        ["20%", "50"]
+      ])
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from Bill Gates -"
+    ]),
+  "'K-12 is partly about %s.'",
+  [
+    ["babysitting the kids so the parents can do other things"],
+    ["social development because that really matters in the long run"],
+    ["ecology since future generations will judge us by how we treated the Earth"],
+    ["extracurricular activities"],
+    ["inspiring students to be the leaders of tomorrow"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Observation of Teacher -"
+    ]),
+  "The Great Pyramids are marvelous to behold %s.",
+  [
+    ["but, for most of its workers, they weren't fun to build"],
+    ["and a gateway to the sky"],
+    ["and a testament to humanities greatness"],
+    ["but the greatness of Africa lies far beyond them in the Serengeti"],
+    ["especially just after the sun rises"]
+  ]
+);
+addPartToVerbal(
+  createPreamble(
+    null,
+    [
+      "Reference - 50 Inventions that Shaped the Modern Economy"
+    ]),
+  [
+    createSingleQuestion(
+      "The introduction of the washing machine %s, because %s.",
+      [
+        ["didn't save time", "people just decided to wash clothes more frequently"],
+        ["saved time", "the machine did the work for them"],
+        ["triggered international conflicts", "their construction lead to metal shortages"],
+        ["sunk a famous ship", "they were too heavy"],
+        ["caused a significant economic contraction", "those who worked at laundromats lost their jobs"]
+      ]),
+    createSingleQuestion(
+      "%s eating is more likely to involve eating %s than %s.",
+      [
+        ["Impulsive", "junk food", "something nutritious"],
+        ["Planned", "junk food", "something nutritious"],
+        ["Impulsive", "nutritious food", "junk food"],
+        ["Restricted", "a variety of things", "just a few"],
+        ["Vegan", "dairy products", "kale"]
+      ]),
+    createSingleQuestion(
+      "TV dinner and related inventions changed the economy in two important ways - %s but also %s.",
+      [
+        ["freed women from hours of domestic chores further enabling them to pursue careers", "increased obesity"],
+        ["it imposed the gold standard", "decreased foreign trade"],
+        ["decreased possibilities for women to obtain an education", "lowered automobile usage"],
+        ["directly stimulated the internet", "increased the popularity of mainframes"],
+        ["lowered automobile usage", "increased interest in nuclear power"]
+      ])
+  ]
+);
+addPartToVerbal(
+  createPreamble(
+    ["Source - https://www.inc.com/quora/why-salespeople-get-paid-more-than-engineers.html"],
+    [
+      "Title - Why do sales people get paid more than software engineers / developers?",
+      "",
+      "...",
+      "Engineers get more and more productive and essentially work themselves out of a job. As a company scales, revenue per engineer should skyrocket. But salespeople do not get much more productive and revenue for salesperson is much more constant over time. That means that <end of first paragraph>.",
+      "...",
+      "Additionally, very few people want to be salespeople. ... And salespeople are the first people to get fired -- it is a super stressful what-have-you-done-for-me-lately job. The job can be a grind. So the only way to recruit people to the job is <end of second paragraph>.",
+      "...",
+      "So while engineers still earn less cash comp than salespeople, that <end of third paragraph>.",
+      "..."
+    ]),
+  [
+    createSingleQuestion(
+      "The '<end of first paragraph>' value should be '%s'.",
+      [
+        ["salespeople are always in demand"],
+        ["salespeople need more training"],
+        ["salespeople should blame themselves for not being more productive"],
+        ["productivity determines how much people get paid"],
+        ["engineers should intentionally become less productive"]
+      ]),
+    createSingleQuestion(
+      "The '<end of second paragraph>' value should be '%s'.",
+      [
+        ["to pay more"],
+        ["to make the job less stressful"],
+        ["to advertise more"],
+        ["to hire younger people"],
+        ["to hire more recruiters"]
+      ]),
+    createSingleQuestion(
+      "The '<end of third paragraph>' value should be '%s'..",
+      [
+        ["difference is narrowing"],
+        ["engineering will always be a better job"],
+        ["will always be the way it is"],
+        ["is the way it should be"],
+        ["engineering will always be more noble"]
+      ])
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(["Reference - https://shortstoriesshort.com/story/the-emperors-new-clothes/"], null),
+  "A major theme of \"The Emperor's New Clothes\" is that %s.",
+  [
+    ["people don't want to admit the obvious if does so will hurt them socially"],
+    ["even just emperors risk being embarrassed when marching in a parade"],
+    ["making clothes for powerful people is a great way to make a living"],
+    ["power can be obtained by dressing well"],
+    ["wearing a new set of clothes can change people's opinion of you"]
+  ]
+);
+//
+//"You don’t get what you deserve, you get what you negotiate."
+addSingleQuestionToVerbal(
   createPreamble(["Reference - https://www.getrichslowly.org/you-can-negotiate-anything/"], null),
   "The %s of any negotiation %s.",
   [
@@ -1446,6 +1639,3 @@ addSingleQuestionToVerbal(
     ["3 components", "preparation, demands, and achievement"]
   ]
 );
-//Rule of 72
-//Einstein quote about compound interest
-//vanguard investing
