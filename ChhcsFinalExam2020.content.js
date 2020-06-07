@@ -1535,6 +1535,21 @@ addSingleQuestionToVerbal(
     ["especially just after the sun rises"]
   ]
 );
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Opinion of Teacher -"
+    ]),
+  "(%s, living on one’s own, %s) > (having fun, living with parents, %s)",
+  [
+    ["Bored", "establishing a life", "saddled with student-loan debt"],
+    ["Unemployed", "hungry", "looking for a job"],
+    ["About to get fired", "tired", "studying for the AFQT"],
+    ["Left the country on a whim", "obtained a car loan", "studying a marketable skill in school"],
+    ["Studying history", "recently arrested", "helping a family member"]
+  ]
+);
 addPartToVerbal(
   createPreamble(
     null,
@@ -1730,14 +1745,58 @@ addPartToVerbal(
         ["engineers generally get paid in stock options which have various outcomes"]
       ]),
     createSingleQuestion(
-      "Regarding Finances/Career, the teacher assigned a value of 0.5 in part because %s.",
+      "While many things fit into the categories (Experiences, Family/Community, Finances/Career), some things don't contribute to them and should be avoided including %s.",
       [
-        ["the initial pay is good but it tends to plateau, you have some flexibility to pivot to other corporate jobs, and there's increased competition from foreigners and no licensing requirements"],
-        ["you either hit it big at a startup or end up being paid below average"],
-        ["most every engineer eventually starts a business and the fortunes of that venture can vary"],
-        ["you will have a lower salary but a strong pension plan"],
-        ["engineers generally get paid in stock options which have various outcomes"]
+        ["being unemployed, staying in school too long without a career direction, living far away from family but not in an area one likes, and seeking to get married but in a relationship going nowhere"],
+        ["driving a used car, buying a home for your family instead of renting, spending time with relatives, and getting technical certifications"],
+        ["pursuing a master's degree, participating in your company's 401K program, joining a local gym to improve your fitness, and joining a local adult sports team to meet new people"],
+        ["participating in a local civic or religious organization, caring for an elderly family member, visiting a foreign country to look at landmarks, and taking long weekend vacations to go hiking in the mountains"],
+        ["learn to dance, study expense ratios of mutual funds, review nutritional data of food, and take a course at a local community college"]
       ])
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's experience working on software teams"
+    ]),
+  "Software engineering teams in America are about %s American, %s South Asian (typically Indian), and %s East Asian (typically Chinese).",
+  [
+    ["45%", "45%", "10%"],
+    ["80%", "10%", "10%"],
+    ["50%", "20%", "30%"],
+    ["20%", "50%", "30%"],
+    ["30%", "20%", "50%"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://hbr.org/2017/05/the-h-1b-visa-debate-explained"
+    ], null),
+  "'For example, [Indian outsourcing firms'] filings were for jobs paying %s. Companies like Amazon, Apple, Facebook, Google, and Microsoft mostly filed for jobs that paid %s.'",
+  [
+    ["between $60,000-$70,000 a year", "well above $100,000"],
+    ["between $80,000-$100,000 a year", "well above $100,000"],
+    ["minimum wage", "well above $100,000"],
+    ["well above $100,000", "between $60,000–$70,000 a year"],
+    ["well above $100,000", "between $80,000–$100,000 a year"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's Opinion"
+    ]),
+  "Try %s when choosing a career unless you have %s.",
+  [
+    ["not to be overly ideological", "strong religious or political beliefs"],
+    ["to be ideological and uncompromising", "an emergency"],
+    ["to be ideological and uncompromising", "parent who recommends it"],
+    ["to be ideological and uncompromising", "too much student-loan debt"],
+    ["not to be overly ideological", "too much student-loan debt"]
   ]
 );
 //
