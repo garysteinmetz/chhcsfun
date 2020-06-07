@@ -1794,11 +1794,104 @@ addSingleQuestionToVerbal(
   [
     ["not to be overly ideological", "strong religious or political beliefs"],
     ["to be ideological and uncompromising", "an emergency"],
-    ["to be ideological and uncompromising", "parent who recommends it"],
+    ["to be ideological and uncompromising", "parent who recommends a specific career"],
     ["to be ideological and uncompromising", "too much student-loan debt"],
     ["not to be overly ideological", "too much student-loan debt"]
   ]
 );
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://howtheyplay.com/team-sports/What-are-the-Qualities-of-an-Elite-NFL-Quarterback"
+    ],
+    null),
+  "'12 Characteristics of the Top-Level NFL Quarterbacks' include '%s' .",
+  [
+    ["able to read opponent's defensive schemes and anticipate their likely moves"],
+    ["remaining composed and photogenic at press conferences"],
+    ["getting along with teammates and the coaching staff"],
+    ["participate in all pre-season activities including voluntary training camp sessions"],
+    ["doing well academically"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Consider the following scenario - ",
+      "",
+      "You're not a dentist but are going for your annual cleaning confident that your teeth are in good shape.",
+      "The dentist informs you that you need costly repair work, but your teeth are actually just fine and he just wants to earn more money to pay for his golf club membership."
+    ]),
+  "The dentist doing what's most beneficial for him instead of what's most beneficial for you (the person that hired him) is an example of '%s' . It's hard for you to know his true intentions because of '%s' .",
+  [
+    ["The Principal-Agent Problem", "Information Asymmetry"],
+    ["The Medical Problem", "Psychic Blockage"],
+    ["Greed", "Edward's Theorem"],
+    ["Asymmetric Objectives", "Dental Public Relations"],
+    ["Reposed Alignment", "Missing Itemized Statement"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Consider the following scenarios - ",
+      "",
+      "1) Not covering your mouth while coughing",
+      "2) Polluting the environment",
+      "3) Talking loudly in the library"
+    ]),
+  "Each of these is an example of '%s' because in each case your action didn't hurt you, but if everyone else did them too then you'd be worse off then if you'd never committed the action.",
+  [
+    ["The Prisoner's Dilemma"],
+    ["Etiquette Fatigue"],
+    ["Societal Shortcoming"],
+    ["Environmental Dissonance"],
+    ["Communal Disruption"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Job applicants often do the following even though the job doesn't require it - ",
+      "",
+      "1) List college degree on resume",
+      "2) List volunteer work on resume",
+      "3) Wear suit to interview",
+      "",
+      "Hiring employers often do the following even though they may lose job good candidates by doing so - ",
+      "",
+      "1) Reject those without a college degree",
+      "2) Reject those with low credit scores",
+      "3) Reject those with an arrest record"
+    ]),
+  "In these examples, the job applicants are engaging in '%s' while the hiring employers are engaging in '%s' .",
+  [
+    ["signalling", "screening"],
+    ["preparation", "thoughtfulness"],
+    ["apple-polishing", "miserliness"],
+    ["fear", "gadflying"],
+    ["ultra-caution", "ultra-caution"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from Upton Sinclair"
+    ]),
+  "It is %s to get [people] to %s something, when [their] %s depend on [them] %s it.",
+  [
+    ["difficult", "understand", "salaries", "not understanding"],
+    ["easy", "understand", "salaries", "understanding"],
+    ["a marvel", "say", "public images", "not saying"],
+    ["easy", "do", "livelihoods", "doing"],
+    ["impossible", "do", "others", "not prioritizing"]
+  ]
+);
+//signalling and screening
 //
 //"You don’t get what you deserve, you get what you negotiate."
 addSingleQuestionToVerbal(
