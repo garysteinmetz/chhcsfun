@@ -1891,7 +1891,154 @@ addSingleQuestionToVerbal(
     ["impossible", "do", "others", "not prioritizing"]
   ]
 );
-//signalling and screening
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Jane is wearing a hat and about to enter into a room. Here is a probability distribution of the hat's color.",
+      "",
+      "- Dark Red - 30%",
+      "- Dark Blue - 40%",
+      "- Any Dark Color - 70%"
+    ]),
+  "This %s a valid probability distribution because %s.",
+  [
+    ["isn't", "the probabilities don't total 100% and 'Any Dark Color' overlaps with the other possibilities"],
+    ["is", "the outcomes are clearly defined"],
+    ["is", "the probability distribution concerns hat color and each possibility corresponds to hat color and nothing else"],
+    ["is", "Jane is known for wearing dark-colored hats"],
+    ["isn't", "the probability of a white hat isn't included"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "A lottery ticket costs $1 and one out of every 200 (0.005 likelihood) tickets wins $100."
+    ]),
+  "The expected cost (%s) %s the expected winnings (%s), so you %s buy one.",
+  [
+    ["100%*$1 = $1.00", "exceeds", "0.5%*$100 = $0.50", "should not"],
+    ["0.5%*$100 = $0.50", "is less than", "100%*$1 = $1.00", "should"],
+    ["$1", "is less than", "$100", "should"],
+    ["$1", "is less than", "$200", "should"],
+    ["100%*$100 = $100.00", "exceeds", "0.5%*$100 = $0.50", "should not"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "In a hat is a slip of paper for each of the following numbers (6 total slips) -",
+      "",
+      "- 4, 6, 4, 6, 4, 6"
+    ]),
+  "When drawing a single slip from the hat, its value will have a '%s' of %s and a '%s' of %s.",
+  [
+    ["mean", "5", "mean deviation", "1"],
+    ["mean", "5", "mean deviation", "5"],
+    ["mean", "5", "mean deviation", "2"],
+    ["standard", "5", "standard deviation", "5"],
+    ["standard", "5", "standard deviation", "2"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Claim - Playing Mozart music to an unborn baby will make the child smarter (as in doing better in school)."
+    ]),
+  "%s this relationship (correlation) is true, it %s mean that playing Mozart music causes children to become smarter because %s.",
+  [
+    ["While", "doesn't", "other factors (like better nutrition) which do make children smarter are more likely to be practiced by someone playing Mozart"],
+    ["Since", "does", "correlation is causation"],
+    ["Since", "does", "it follows human intuition that Mozart melodies would gently reshape the crude initial state of the brain into a more organized state"],
+    ["While", "doesn't", "hip hop music is better"],
+    ["Since", "does", "people in general who listen to Mozart tend to be smarter"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "You are about to flip a fair coin 10 times.",
+      "",
+      "Possible Outcome 1 - The first 5 flips will be heads and the last 5 flips will be tails",
+      "Possible Outcome 2 - 5 of the flips will be heads, 5 of the flips will be tails",
+      ""
+    ]),
+  "The probability that 'Possible Outcome 1' occurs is %s. The probability that 'Possible Outcome 2' occurs is %s.",
+  [
+    ["under 1%", "31.25%"],
+    ["31.25%", "under 1%"],
+    ["31.25%", "31.25%"],
+    ["50%", "50%"],
+    ["25%", "50%"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "A '%s' is very common %s in nature and %s is thought to be one.",
+  [
+    ["bell curve", "adult male height in the United States"],
+    ["bell curve", "Olympic gold medals won by country"],
+    ["power law distribution", "adult male height in the United States"],
+    ["power law distribution", "blood pressure"],
+    ["power law distribution", "the sum of several dice rolls"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.theatlantic.com/science/archive/2018/11/psychologys-replication-crisis-real/576223/"
+    ],
+    [
+      "Topic - Replication Crisis in Psychology and Biases in Studies"
+    ]),
+  "The results from %s of psychology studies couldn't be replicated. '%s' like %s is a common problem among others to avoid when conducting a study.",
+  [
+    ["50%", "Selection Bias", "determining average height in society by using the height of basketball players"],
+    ["100%", "Height Bias", "determining average height in society by using the height of basketball players"],
+    ["0%", "Study Bias", "determining average height in society by measuring the height of randomly-selected people"],
+    ["50%", "Study Bias", "determining average height in society by measuring the height of randomly-selected people"],
+    ["50%", "Height Bias", "determining average height in society by measuring the height of randomly-selected people"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "10% of the population suffers from an ailment and a test correctly predicts whether you have the ailment 90% of the time (10% failure rate).",
+      "",
+      "True Positive = (Have Ailment)*(Test Correct) = (0.1)*(0.9) = 0.09 (9%)",
+      "True Negative = (Don't Have Ailment)*(Test Correct) = (0.9)*(0.9) = 0.81 (81%)",
+      "False Positive = (Don't Have Ailment)*(Test Incorrect) = (0.9)*(0.1) = 0.09 (9%)",
+      "False Negative = (Have Ailment)*(Test Incorrect) = (0.1)*(0.1) = 0.01 (1%)"
+    ]),
+  "If you test positive, you have a %s chance of having the ailment.",
+  [
+    ["50%"],
+    ["100%"],
+    ["0%"],
+    ["25%"],
+    ["75%"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "You've flipped a fair coin 10 times and it has landed on heads each time."
+    ]),
+  "You have a %s chance of getting a heads if you flip the coin again, thinking otherwise means that you've fallen for the \"%s\".",
+  [
+    ["50%", "Gambler's Fallacy"],
+    ["100%", "Loser's Fallacy"],
+    ["0%", "Winner's Fallacy"],
+    ["0%", "Hot-Hand Fallacy"],
+    ["100%", "Alternate Mind Scenario"]
+  ]
+);
 //
 //"You don’t get what you deserve, you get what you negotiate."
 addSingleQuestionToVerbal(
