@@ -1880,7 +1880,7 @@ addSingleQuestionToVerbal(
   createPreamble(
     null,
     [
-      "Quote from Upton Sinclair"
+      "Quote from Upton Sinclair -"
     ]),
   "It is %s to get [people] to %s something, when [their] %s depend on [them] %s it.",
   [
@@ -2039,8 +2039,111 @@ addSingleQuestionToVerbal(
     ["100%", "Alternate Mind Scenario"]
   ]
 );
-//
-//"You don’t get what you deserve, you get what you negotiate."
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from Chester Karrass -"
+    ]),
+  "\"You %s get what you %s. %s.\"",
+  [
+    ["don't get", "deserve", "You get what you negotiate"],
+    ["do get", "deserve", "Life is fair"],
+    ["do", "earn", "Pay is based on productivity"],
+    ["only", "get care about", "So try hard"],
+    ["will", "strive for", "Achievement is an accurate measure of honest work"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Legend of John Henry - John Henry was legendary for driving holes into rocks, but powerful machines came along that threatened his job."
+    ]),
+  "He %s one of the machines %s, but %s.",
+  [
+    ["challenged", "to a contest and won", "died of exhaustion"],
+    ["used", "to do his work", "but never got paid"],
+    ["broke", "with his hands", "other machines carried on with the work"],
+    ["sold", "to a competitor", "the machine didn't work"],
+    ["built", "and received a patent for it", "someone stole his intellectual property"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.bankrate.com/finance/college-finance/how-much-college-debt-is-too-much-1.aspx"
+    ],
+    null),
+  "%s graduate undergraduate college with %s.",
+  [
+    ["Don't", "more debt than your starting salary"],
+    ["It's okay to", "lots of debt so long as you pursue your dreams"],
+    ["When you", "a STEM degree you will be set"],
+    ["When you", "an extensive network of contacts you can skip job fairs"],
+    ["After you", "an important internship on your resume you should easily be able to get a job"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://pubmed.ncbi.nlm.nih.gov/25774679/"
+    ],
+    null),
+  "'Finally, %s was observed across individuals who differed in culture, gender, age, and personality, supporting %s.'",
+  [
+    ["the importance of status", "the universality of the status motive"],
+    ["love of soccer", "its title as The Beautiful Game"],
+    ["interest in love stories", "the thought that shows about love will always be made"],
+    ["desire to eat pizza", "the notion that it is one of the top foods"],
+    ["interest in science", "universal curiosity"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Joke by Comedian Rich Hall"
+    ]),
+  "\"When you go to work, if your name is on the building, you're %s. If your name is on your desk, you're %s. If your name is on your shirt, you're %s.\"",
+  [
+    ["rich", "middle-class", "poor"],
+    ["a doctor", "an accountant", "an entrepreneur"],
+    ["a politician", "the CEO", "a boxer"],
+    ["in debt", "in luck", "in good health"],
+    ["in heaven", "on Earth", "in jail"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://money.usnews.com/money/blogs/outside-voices-careers/2014/09/17/dont-believe-these-8-job-search-myths"
+    ],
+    null),
+  "\"%s of people land jobs through %s.\"",
+  [
+    ["More than 70 percent", "networking"],
+    ["About 20 percent", "networking"],
+    ["About 50 percent", "job sites"],
+    ["About 60 percent", "job sites"],
+    ["More than 70 percent", "job sites"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.theatlantic.com/business/archive/2015/11/zoning-laws-and-the-rise-of-economic-inequality/417360/"
+    ],
+    null),
+  "Zoning regulations (%s) hurt %s.",
+  [
+    ["which raise the price of rent and home ownership", "the young and the poor"],
+    ["which determine elevator capacity", "the salaries of elevator inspectors"],
+    ["which are crafted by judicious members of city council", "have everyone's interests in mind"],
+    ["and pollution", "commute times"],
+    ["for sports arenas", "the expansion of professional sports teams"]
+  ]
+);
 addSingleQuestionToVerbal(
   createPreamble(["Reference - https://www.getrichslowly.org/you-can-negotiate-anything/"], null),
   "The %s of any negotiation %s.",
@@ -2050,5 +2153,214 @@ addSingleQuestionToVerbal(
     ["only component", "is money"],
     ["endgame", "is to make more money"],
     ["3 components", "preparation, demands, and achievement"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "A way you can help yourself in a negotiation by (A) %s and (B) %s.",
+  [
+    ["having acceptable alternatives (known as BATNAs)", "having limited interest (especially emotional interest)"],
+    ["really caring about what you want", "not caring about alternatives"],
+    ["telling everyone ahead of time that you must go through with the negotiation", "repeatedly calling the other party"],
+    ["hiring awesome negotiators", "bypassing those negotiators by talking to the other party directly"],
+    ["respect the outward motives of the other party without question", "enter the negotiation without preparation (wing it)"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's Strong (Reluctant) Opinion",
+      "",
+      "You return to your rented apartment after a long day at work to find your unemployed roommate resting comfortably on the couch watching TV and ignoring the unwashed dishes in the sink."
+    ]),
+  "In this situation, %s",
+  [
+    ["your roommate is the winner! Watch out for mediocre people!"],
+    ["your roommate is a a total loser."],
+    ["you should call the roommate's parents."],
+    ["you should spend time with your roommate patiently explaining the importance of having a job to pay his/her share of the rent"],
+    ["you should plead with your roommate to go find a job"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Old Saying"
+    ]),
+  "\"A %s thinks %s before saying %s.\"",
+  [
+    ["diplomat", "twice", "nothing"],
+    ["politician", "nothing", "something"],
+    ["boaster", "little", "everything"],
+    ["scientist", "carefully", "a new theory"],
+    ["great speaker", "emotionally", "great things"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from President Eisenhower -"
+    ]),
+  "\"%s are useless but %s is indispensable.\"",
+  [
+    ["Plans", "planning"],
+    ["Tanks", "airplanes"],
+    ["Speeches", "action"],
+    ["Followers", "a leader"],
+    ["Budgets", "money"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "You can help yourself in a negotiation by (A) %s and (B) %s.",
+  [
+    ["being well-rested", "not waiting to the last minute begin it"],
+    ["waiting to the last moment to start so that you have a concise strategy", "be impatient"],
+    ["use the time zone of the other party", "give quick answers to complicated questions"],
+    ["telling the other party your deadline", "scheduling a meeting real early in the morning"],
+    ["showing up late", "(if you travelled to the other party's office) announce your departure time"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Consider this scenario -",
+      "",
+      "After searching the internet for hours, you find the basketball you want is sold at Store A for $29. You then call that store and wait on hold for 30 minutes to confirm when the store is open. Just as you step into your car, your spouse tells you that Store B is open and sells the same basketball for $28."
+    ]),
+  "To avoid the 'Sunk-Cost Fallacy', you should %s.",
+  [
+    ["go to Store B to buy the basketball"],
+    ["go to Store A to buy the basketball"],
+    ["go buy another type of basketball at Store A"],
+    ["go buy another type of basketball at Store B"],
+    ["forget about buying the basketball"],
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Consider this scenario -",
+      "",
+      "You've been given a job offer as a junior software engineer and are trying to negotiate your salary.",
+      "The average annual salary for this position is $70K but the employer initiates the negotiation by stating they'll offer $60K.",
+    ]),
+  "Your future employer is using the negotiating technique of '%s'.",
+  [
+    ["anchoring"],
+    ["say them cheap"],
+    ["clueless"],
+    ["stifling"],
+    ["initiating"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Consider this corporate scenario where you, as a junior developer, are discussing technologies with the team -",
+      "",
+      "Technical Lead - We should use Java for this project.",
+      "You - I just read a great article about how Python is a better language and Java isn't that great. We should use Python.",
+      "Manager - We will use Java for the project."
+    ]),
+  "You should answer by saying '%s'",
+  [
+    ["Java's a great language and I always love the opportunity to learn new things."],
+    ["No, I’m the developer and I get to decide."],
+    ["No, I'll go talk to the director about this."],
+    ["No, Java's an outdated language."],
+    ["No, this team deserves better technical leadership."]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's Informed Opinion"
+    ]),
+  "Corporate employees are usually assigned to job classes and associated '%s'. Since bosses often cannot radically change someone's pay the boss may reward that person with %s.",
+  [
+    ["salary bands", "better job responsibilities and public flattery"],
+    ["price points", "a corner office and a plaque in the building lobby"],
+    ["privilege group", "a firm handshake and a company shirt"],
+    ["money tier", "special computer privileges"],
+    ["bonus base", "a special party in your honor"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/"
+    ],
+    null),
+  "According to Joel Spolsky, managers want software engineers who are '%s' .",
+  [
+    ["smart and gets things done"],
+    ["great corporate politicians"],
+    ["understand Windows but not necessarily Unix"],
+    ["smooth talkers"],
+    ["speak loudly and interrupt other team members"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "'%s' is where the lowest ranking performers within a job title are periodically laid off.",
+  [
+    ["Rank and yank"],
+    ["Maniac culture"],
+    ["Losers must leave"],
+    ["Hatchet job"],
+    ["Melt the iceberg"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.forbes.com/sites/jackmccullough/2019/12/09/the-psychopathic-ceo/"
+    ],
+    null),
+  "About %s of CEOs are %s.",
+  [
+    ["10%", "psychopaths"],
+    ["70%", "psychopaths"],
+    ["50%", "women"],
+    ["80%", "blond"],
+    ["20%", "high-school dropouts"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from Pro-Smoking Lobbyist Nick Naylor in Comedy \"Thank You for Smoking\" -"
+    ]),
+  "\"Everyone's got %s.\"",
+  [
+    ["a mortgage to pay"],
+    ["someone that loves them"],
+    ["a bad side"],
+    ["a vice"],
+    ["to do their part"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's Life Experience"
+    ]),
+  "Teacher's wife %s.",
+  [
+    ["got laid off in December 2002 just days before she received her annual bonus"],
+    ["received an unexpected promotion to celebrate the new year"],
+    ["qualified for specialized training that allowed her to apply for a new job position"],
+    ["participated in an elaborate office holiday party"],
+    ["got her student-loan debt paid off by her employer because of her great job performance"]
   ]
 );
