@@ -56,7 +56,7 @@ addSingleQuestionToMath(
 );
 addSingleQuestionToMath(
   createPreamble(null, ["Consider a shell script with just this one line in it -", "", "echo Hello World"]),
-  "Running this shell script would %s. It's file extension on Windows would be %s and on Unix it would be %s.",
+  "Running this shell script would %s. It's file extension on Windows would be '%s' and on Unix it would be '%s'.",
   [
     ["print 'Hello World' to the console", "*.bat", "*.sh"],
     ["copy message 'Hello World' to a remote server", "*.bat", "*.sh"],
@@ -2362,5 +2362,228 @@ addSingleQuestionToVerbal(
     ["qualified for specialized training that allowed her to apply for a new job position"],
     ["participated in an elaborate office holiday party"],
     ["got her student-loan debt paid off by her employer because of her great job performance"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.fastcompany.com/90432143/im-a-time-management-coach-this-is-what-i-advise-about-procrastination"
+    ],
+    [
+      "\"People think of hikikomori as being lazy young people with personality problems who stay in their rooms all the time playing video games, but the reality is that most hikikomori are people who <end of sentence>.\""
+    ]),
+  "The '<end of sentence>' part should state \"%s\" .",
+  [
+    ["can't get back into society after straying off the path at some point"],
+    ["like manga instead"],
+    ["just want to get a job"],
+    ["find a home to live in, earn enough income to pay basic bills, and get married"],
+    ["run for prime minister"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.forbes.com/sites/jackmccullough/2019/12/09/the-psychopathic-ceo/"
+    ],
+    [
+      "Quote from Time Management Coach Elizabeth Grace Saunders -"
+    ]),
+  "\"%s always wins. So the closer we can get to working with %s, the better off we'll be.\"",
+  [
+    ["Reality", "our reality"],
+    ["My team", "my team"],
+    ["Money", "finance"],
+    ["A leader", "the leader"],
+    ["A champion", "champions"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from Pro-Hockey Player Wayne Gretzky -"
+    ]),
+  "\"You %s of the shots you %s.\"",
+  [
+    ["miss 100%", "don't take"],
+    ["make 100%", "imagine"],
+    ["make 100%", "practice"],
+    ["make 100%", "master"],
+    ["miss 100%", "trip on"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.washingtonpost.com/local/education/the-degrees-of- separation-between-the-genders-in-college-keeps-growing/2019/10/25/8b2e5094-f2ab-11e9-89eb-ec56cd414732_story.html",
+      "Reference - https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/engineering.cfm",
+      "Reference - https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/computer-sciences.cfm",
+    ],
+    [
+      "Women make up about 56 of all college students but only about 20 percent of engineering and computer science students."
+    ]),
+  "Old saying - \"The %s but the %s.\"",
+  [
+    ["odds are good", "goods are odd"],
+    ["classroom is familiar", "classroom is strange"],
+    ["sameness gets tiring", "starting salary makes it worthwhile"],
+    ["social scene is bland", "work is interesting"],
+    ["parties are boring", "labs are fun"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.inc.com/jeff-haden/a-study-of-27-million-startups-found-ideal-age-to-start-a-business-and-its-much-older-than-you-think.html",
+      "Reference - https://www.forbes.com/sites/heatherfarmbrough/2019/06/03/new-report-identifies-key-characteristics-of-successful-startup-entrepreneurs/#5d27601a21d3"
+    ],
+    null),
+  "For very successful tech companies founders tend to be around %s years old and %s.",
+  [
+    ["45", "a great team is more important than a great concept"],
+    ["45", "a great concept is more important than a great team"],
+    ["35", "a great team is more important than a great concept"],
+    ["25", "a great team is more important than a great concept"],
+    ["25", "a great concept is more important than a great team"]
+  ]
+);
+addSingleQuestionToVerbal(
+  null,
+  "Old Saying - \"%s while the %s.\"",
+  [
+    ["Make hay", "sun shines"],
+    ["Make money", "the bank vault is open"],
+    ["Decide well", "clock still ticks"],
+    ["Have fun", "suckers work"],
+    ["Work hard", "boss is looking"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://fivethirtyeight.com/features/in-the-end-people-may-really-just-want-to-date-themselves/"
+    ],
+    null),
+  "\"The data reveals a clear pattern: People are %s.\"",
+  [
+    ["interested in people like themselves"],
+    ["want to just see themselves in the mirror"],
+    ["enjoy the same food with others"],
+    ["interested in doubling their money"],
+    ["good for nothing"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's Debatable Opinion",
+      "When just getting to meet someone you may consider marrying later, consider this question to ask that person."
+    ]),
+  "\nDo you want more or fewer %s than your %s had?\n",
+  [
+    ["children", "parents"],
+    ["houses", "parents"],
+    ["vacations", "older siblings"],
+    ["pets", "parents"],
+    ["bank accounts", "accountant"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from Clinical Psychologist Meg Jay -"
+    ]),
+  "\"%s is not the new %s.\"",
+  [
+    ["30", "20"],
+    ["Electric cars", "luxury cars"],
+    ["Windows", "Mac"],
+    ["Tablets", "PC"],
+    ["Working from home", "retirement"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.nbcnews.com/better/lifestyle/mental-load-women-reflect-messy-truth-being-mom-ncna1012061"
+    ],
+    [
+      "I want to walk out the door and never come back. I’ve just for a moment thought about grabbing a bag and my passport and just running away. Just for a little while. And then my girls will text me something funny or ask me if I want anything <end of sentence>."
+    ]),
+  "The '<end of sentence>' is \"%s.\"",
+  [
+    ["and I remember that motherhood is a marathon, not a sprint"],
+    ["and then I'm so thankful that I can ask someone else to go shopping"],
+    ["oh what does it matter"],
+    ["and I just want to turn off my phone"],
+    ["and then I'm no longer in a bad mood"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    [
+      "Reference - https://www.bloomberg.com/opinion/articles/2019-11-12/millennials-approach-middle-age-without-benefit-of-economic-boom",
+      "Reference - https://www.forbes.com/sites/ebauer/2019/11/30/another-record-low-will- the-us-fertility-rates-collapse-ever-end/#2f053bb15e45"
+    ],
+    null),
+  "On average people want about %s children and end up having %s children.",
+  [
+    ["2.5", "1.7"],
+    ["2.5", "2.2"],
+    ["2.5", "2.7"],
+    ["2.2", "2.1"],
+    ["1.8", "2.5"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Source - Teacher's Informed Opinion"
+    ]),
+  "%s fiber is like 'motor oil' for the %s system while %s fiber is like 'motor oil' for the %s system.",
+  [
+    ["Insoluble", "digestive", "soluble", "circulatory"],
+    ["Insoluble", "nervous", "soluble", "muscular"],
+    ["Insoluble", "respiratory", "soluble", "skeletal"],
+    ["Introvert", "nervous", "extrovert", "muscular"],
+    ["Introvert", "respiratory", "extrovert", "skeletal"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "Quote from Opera Soprano Beverly Sills -"
+    ]),
+  "\"There are no %s to any %s.\"",
+  [
+    ["shortcuts", "place worth going"],
+    ["roads", "island of contemplation"],
+    ["reasons", "experience"],
+    ["keys", "city in the clouds"],
+    ["notes", "bad atti-tunes"]
+  ]
+);
+addSingleQuestionToVerbal(
+  createPreamble(
+    null,
+    [
+      "From Comedian Conan O'Brien's 2011 Commencement Speech at Dartmouth -",
+      "",
+      "No specific <A> defines me, and it should not define you.",
+      "...",
+      "Well I am here to tell you that whatever you think your <B> now, it will probably change. And that's <C>."
+    ]),
+  "'<A>', '<B>', and '<C>' here should be '%s', '%s', and '%s', respectively.",
+  [
+    ["job or career goal", "dream is", "okay"],
+    ["car", "graduate school is", "regrettable"],
+    ["fraternity", "skills are", "expected"],
+    ["suit", "retirement date is", "because of poor planning"],
+    ["middle name", "desired weight is", "to be watched"]
   ]
 );
