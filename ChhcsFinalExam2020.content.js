@@ -56,7 +56,7 @@ addSingleQuestionToMath(
 );
 addSingleQuestionToMath(
   createPreamble(null, ["Consider a shell script with just this one line in it -", "", "echo Hello World"]),
-  "Running this shell script would %s. It's file extension on Windows would be '%s' and on Unix it would be '%s'.",
+  "Running this shell script would %s. Its file extension on Windows would be '%s' and on Unix it would be '%s'.",
   [
     ["print 'Hello World' to the console", "*.bat", "*.sh"],
     ["copy message 'Hello World' to a remote server", "*.bat", "*.sh"],
@@ -290,7 +290,7 @@ addSingleQuestionToMath(
 );
 addSingleQuestionToMath(
   null,
-  "AWS is Amazon's cloud computer service and, as of late 2019, its largest source of profit.",
+  "AWS is Amazon's cloud-computing service and, as of late 2019, its largest source of profit.",
   [
     []
   ]
@@ -499,7 +499,7 @@ addPartToMath(
     ]),
   [
     createSingleQuestion(
-      "'console.log(person.name)' + will print '%s'.",
+      "'console.log(person.name)' will print '%s'.",
       [
         ["Prince Harry"],
         ["red"],
@@ -559,8 +559,8 @@ addSingleQuestionToMath(
   null,
   "In software development, libraries are %s used because they %s.",
   [
-    ["heavily", "save time, improve quality, new team members require less training"],
-    ["hardly", "save time, improve quality, new team members require less training"],
+    ["heavily", "save time, improve quality, and new team members require less training"],
+    ["hardly", "save time, improve quality, and new team members require less training"],
     ["heavily", "software departments have an incentive to spend their budgets"],
     ["hardly", "software engineers want to have full control over all aspects of the application"],
     ["hardly", "slow down the build process"]
@@ -581,7 +581,7 @@ addSingleQuestionToMath(
   null,
   "Concerning software projects, business requirements %s while technical specifications %s.",
   [
-    ["state what should be done", "how it will be done"],
+    ["state what should be done", "state how it will be done"],
     ["identify budget", "determine budget allocation"],
     ["largely ignored by everyone", "determine where coding will take place"],
     ["are written by MBAs", "are written by PhDs"],
@@ -601,7 +601,7 @@ addSingleQuestionToMath(
 );
 addSingleQuestionToMath(
   null,
-  "For larger software projects involving several teams, it's important that everyone %s.",
+  "For a larger software project involving several teams, it's important that everyone %s.",
   [
     ["generally agrees about its goals and deliverables"],
     ["wears the same uniform"],
@@ -623,7 +623,7 @@ addSingleQuestionToMath(
 );
 addSingleQuestionToMath(
   null,
-  "Hexadecimal is a lot like decimal, %s each digit position is %s the one that proceeded it with letters %s representing numbers %s, respectively.",
+  "Hexadecimal is a lot like decimal, %s each digit position is %s the one that proceeded it with letters %s representing the numbers %s, respectively.",
   [
     ["except that", "16 times greater than ", "A, B, C, D, E, and F", "10, 11, 12, 13, 14, and 15"],
     ["except that", "12 times greater than ", "A and B", "10 and 11"],
@@ -720,7 +720,7 @@ addPartToMath(
         ["the unencrypted version of HTTP", "MAC address"]
       ]),
     createSingleQuestion(
-      "The ':443' part of the URL refers to the target %s which %s necessary because %s is the default %s for HTTP",
+      "The ':443' part of the URL refers to the target %s which %s necessary because %s is the default %s for HTTP.",
       [
         ["port", "isn't", "443", "port"],
         ["port", "is", "80", "port"],
