@@ -1541,7 +1541,7 @@ addSingleQuestionToVerbal(
     [
       "Opinion of Teacher -"
     ]),
-  "(%s, living on one’s own, %s) > (having fun, living with parents, %s)",
+  "(%s, able to provide for oneself, %s) > (having fun, have to live with parents, %s)",
   [
     ["Bored", "establishing a life", "saddled with student-loan debt"],
     ["Unemployed", "hungry", "looking for a job"],
@@ -1645,7 +1645,7 @@ addSingleQuestionToVerbal(
   null,
   "The Four Great Inventions of Chinese Civilization are %s, %s, %s, and %s.",
   [
-    ["compass", "gunpowder", "printing press", "press"],
+    ["compass", "gunpowder", "printing press", "paper"],
     ["dancing", "storytelling", "sports", "drama"],
     ["plow", "number zero", "stirrup", "irrigation"],
     ["The Great Wall", "The Three Gorges Dam", "civil-service exams", "kites"],
@@ -2511,7 +2511,7 @@ addSingleQuestionToVerbal(
       "Reference - https://www.nbcnews.com/better/lifestyle/mental-load-women-reflect-messy-truth-being-mom-ncna1012061"
     ],
     [
-      "I want to walk out the door and never come back. I’ve just for a moment thought about grabbing a bag and my passport and just running away. Just for a little while. And then my girls will text me something funny or ask me if I want anything <end of sentence>."
+      "I want to walk out the door and never come back. I've just for a moment thought about grabbing a bag and my passport and just running away. Just for a little while. And then my girls will text me something funny or ask me if I want anything <end of sentence>."
     ]),
   "The '<end of sentence>' is \"%s.\"",
   [
