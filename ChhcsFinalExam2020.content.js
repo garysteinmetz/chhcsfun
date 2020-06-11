@@ -1464,7 +1464,7 @@ addSingleQuestionToVerbal(
 addSingleQuestionToVerbal(
   createPreamble(
     [
-      "Reference - https://www.marketwatch.com/story/in-this-depressing-and-all-too-common- scenario-you-may-need-to-sock-away-44-of-your-income-for-retirement-2019-11-13"
+      "Reference - https://www.marketwatch.com/story/in-this-depressing-and-all-too-common-scenario-you-may-need-to-sock-away-44-of-your-income-for-retirement-2019-11-13"
     ],
     [
       "Consider how much of your annual income that you would need to save to retire at a certain age with the same standard of living."
@@ -1978,7 +1978,7 @@ addSingleQuestionToVerbal(
 );
 addSingleQuestionToVerbal(
   null,
-  "A '%s' is very common %s in nature and %s is thought to be one.",
+  "A '%s' is very common in nature and %s is thought to be one.",
   [
     ["bell curve", "adult male height in the United States"],
     ["bell curve", "Olympic gold medals won by country"],
