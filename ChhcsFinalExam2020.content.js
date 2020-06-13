@@ -276,65 +276,101 @@ addSingleQuestionToMath(
 );
 addSingleQuestionToMath(
   null,
-  "Cloud computing is renting computer capacity instead of buying and maintaining it yourself.",
+  "%s is %s computer capacity instead of %s it yourself.",
   [
-    []
+    ["Cloud computing", "renting", "buying and maintaining"],
+    ["A PR merge", "renting", "buying and maintaining"],
+    ["Depth-first computing", "renting", "buying and maintaining"],
+    ["Cloud computing", "buying and maintaining", "renting"],
+    ["Depth-first computing", "buying and maintaining", "renting"]
   ]
 );
 addSingleQuestionToMath(
   null,
-  "Cloud computing allows a company to focus on its 'core competencies' and quickly change its computing capacity.",
+  "%s allows a company to focus on its %s and %s change its computing capacity.",
   [
-    []
+    ["Cloud computing", "'core competencies'", "quickly"],
+    ["Cloud computing", "depreciation", "quickly"],
+    ["Cloud computing", "'core competencies'", "gradually"],
+    ["Depth-first computing", "'core competencies'", "quickly"],
+    ["Depth-first computing", "'core competencies'", "gradually"]
   ]
 );
 addSingleQuestionToMath(
   null,
-  "AWS is Amazon's cloud-computing service and, as of late 2019, its largest source of profit.",
+  "AWS is Amazon's %s service and, as of late 2019, its largest source of %s.",
   [
-    []
+    ["cloud-computing", "profit"],
+    ["depth-first computing", "losses"],
+    ["cloud-computing", "losses"],
+    ["depth-first computing", "profit"],
+    ["cloud-computing", "Prime customers"],
   ]
 );
 addSingleQuestionToMath(
   null,
-  "The advantages of hosting an application in multiple AWS regions include faster response times and resiliency.",
+  "The %s of hosting an application in multiple AWS regions include %s.",
   [
-    []
+    ["advantages", "faster response times and resiliency"],
+    ["risks", "faster response times and resiliency"],
+    ["disadvantages", "faster response times and resiliency"],
+    ["advantages", "slower response times and single point-of-failure"],
+    ["fallout", "slower response times and single point-of-failure"]
   ]
 );
 addSingleQuestionToMath(
   null,
-  "S3 is the AWS service that acts as a cloud-based file system.",
+  "%s is the AWS service that acts as a cloud-based %s.",
   [
-    []
+    ["S3", "file system"],
+    ["Fargate", "file system"],
+    ["S3", "email system"],
+    ["Fargate", "email system"],
+    ["Fargate", "database"]
   ]
 );
 addSingleQuestionToMath(
   null,
-  "Source code is the raw material for a project but generally doesn't include media, library, and compiled files.",
+  "Source code is the %s for a project but generally %s include media, library, and compiled files.",
   [
-    []
+    ["raw material", "doesn't"],
+    ["raw material", "does"],
+    ["final product", "doesn't"],
+    ["final product", "does"],
+    ["business requirements", "does"]
   ]
 );
 addSingleQuestionToMath(
   null,
-  "Source-code repositories allow developers on the same team to coordinate their file changes to a software project.",
+  "Source-code repositories %s developers on the same team to %s their file changes to a %s.",
   [
-    []
+    ["allow", "coordinate", "software project"],
+    ["prevent", "coordinate", "software project"],
+    ["prevent", "coordinate", "company meeting"],
+    ["allow", "conflict", "software project"],
+    ["prevent", "conflict", "software project"]
   ]
 );
 addSingleQuestionToMath(
   null,
-  "Git is the distributed source-code repository, which means that all project users get a complete copy of the repository.",
+  "Git is the %s source-code repository, which means that %s a complete copy of the repository.",
   [
-    []
+    ["distributed", "all project users get"],
+    ["centralized", "all project users get"],
+    ["distributed", "just the main computer gets"],
+    ["centralized", "just the main computer gets"],
+    ["centralized", "no computer will get"]
   ]
 );
 addSingleQuestionToMath(
   null,
-  "Git makes working on new features ('branching') and then integrating them ('merging') easy.",
+  "%s makes working on %s and then integrating them ('merging') %s.",
   [
-    []
+    ["Git", "new features ('branching')", "easy"],
+    ["Git", "new features ('branching')", "difficult"],
+    ["MySQL", "new features ('branching')", "easy"],
+    ["MySQL", "new features ('branching')", "difficult"]
+    ["Git", "rollbacks", "difficult"],
   ]
 );
 addSingleQuestionToMath(
@@ -343,9 +379,13 @@ addSingleQuestionToMath(
     [
       "@media screen and (max-width: 500px)"
     ]),
-  "The above statement allows CSS to change the layout of a web page for screen widths no greater than 500 pixels.",
+  "The above statement allows CSS to change the layout of a web page for %s.",
   [
-    []
+    ["screen widths no greater than 500 pixels"],
+    ["screen widths greater than 500 pixels"],
+    ["font sizes no greater than 500 pixels"],
+    ["font sizes greater than 500 pixels"],
+    ["font sizes greater than 500 pictures"]
   ]
 );
 addPartToMath(
