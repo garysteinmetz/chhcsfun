@@ -1,7 +1,9 @@
 //
+var ChhcsFinalExam2020Context;
 var ChhcsFinalExam2020 = {
   title: "CHHCS - Web Applications and Cloud Computer - Final Exam for School Year 2019-2020",
-  sections: []
+  sections: [],
+  answerKey: {}
 };
 var satMath = {
   title: "SAT Math",
@@ -13,6 +15,58 @@ var satVerbal = {
 }
 ChhcsFinalExam2020.sections.push(satMath);
 ChhcsFinalExam2020.sections.push(satVerbal);
+//
+function getFinalExamAnswerKey() {
+  return JSON.parse(JSON.stringify(ChhcsFinalExam2020.answerKey));
+}
+function uploadFinalExamWipResults() {
+  sendData('garysteinmetz', 'chhcsfinalexam2020wip', JSON.stringify(scoreFinalExam()), null);
+}
+function scoreFinalExam() {
+  var finalScore = {};
+  finalScore.answerKey = getFinalExamAnswerKey();
+  finalScore.sectionScores = {};
+  //finalScore.compositeScore = 0;
+  //
+  var sections = Object.keys(finalScore.answerKey);
+  for (var i = 0; i < sections.length; i++) {
+    var sectionScore = 0;
+    var nextSectionName = sections[i];//finalScore.answerKey[sections[i]];
+    //if (!finalScore.sectionScores[nextSectionName]) {
+    //  finalScore.sectionScores[nextSectionName] = {};
+    //}
+    console.log("nextSectionName");
+    console.log(nextSectionName);
+    var questions = Object.keys(finalScore.answerKey[nextSectionName]);
+    for (var j = 0; j < questions.length; j++) {
+      var nextQuestion = finalScore.answerKey[nextSectionName][questions[j]];
+      console.log("nextSectionName - " + nextSectionName + ", nextQuestion - " + questions[j] + ", nextQuestion - " + nextQuestion.optionCount);
+      var radioValue = $("input[name='" + questions[j] + "']:checked").val();
+      console.log("radioValue = " + radioValue);
+      if (radioValue) {
+        nextQuestion.submittedAnswer = radioValue;
+        if (radioValue === questions[j]) {
+          sectionScore++;
+        } else {
+          sectionScore = sectionScore - (1.0/nextQuestion.optionCount);
+        }
+      }
+    }
+    //
+    sectionScore = 200 + ((600.0/questions.length)*sectionScore);
+    finalScore.sectionScores[nextSectionName] = sectionScore;
+  }
+  //
+  return finalScore;
+}
+function addToFinalExamAnswerKey(section, correctAnswerHash, optionCount) {
+  if (!ChhcsFinalExam2020.answerKey[section]) {
+    ChhcsFinalExam2020.answerKey[section] = {};
+  }
+  var obj = {};
+  (ChhcsFinalExam2020.answerKey[section])[correctAnswerHash] = obj;
+  obj.optionCount = optionCount;
+}
 //
 function addPart(section, preamble, questions) {
   var part = {
@@ -112,6 +166,26 @@ function formatRightAnswer(template, candidateAnswerZero) {
   }
   return template;
 }
+function formatRightQuestion(template, length) {
+  for (var i = 0; i < length; i++) {
+    template = template.replace("%s", "???");
+  }
+  return template;
+}
+function calculateQuestionAnswerHash(template, candidateAnswer) {
+  var grandHash = "";
+  var hash = sha256.create();
+  hash.update(template);
+  grandHash = grandHash + hash.hex();
+  for (var i = 0; i < candidateAnswer.length; i++) {
+    hash = sha256.create();
+    hash.update(candidateAnswer[i]);
+    grandHash = grandHash + "|" + hash.hex();
+  }
+  hash = sha256.create();
+  hash.update(grandHash);
+  return hash.hex();
+}
 function constructQuestion(sectionId, question, preamble, sectionAbbreviation, currentQuestion) {
   if (preamble) {
     constructPartPreamble(sectionId, preamble, sectionAbbreviation, currentQuestion, currentQuestion);
@@ -122,14 +196,52 @@ function constructQuestion(sectionId, question, preamble, sectionAbbreviation, c
   var div = document.createElement( "div" );
   $(sectionElement).append(div);
   $(div).addClass("question");
-  $(div).text(sectionAbbreviation + "." + currentQuestion + " "
-    + formatRightAnswer(template, getCandidateAnswers(question)[0]));
+  var candidateAnswers = getCandidateAnswers(question);
+  if (isFinalExamActive()) {
+    //
+    var correctHash = calculateQuestionAnswerHash(template, candidateAnswers[0]);
+    //
+    addToFinalExamAnswerKey(sectionAbbreviation, correctHash, candidateAnswers.length);
+    //
+    $(div).text(sectionAbbreviation + "." + currentQuestion + " "
+      + formatRightQuestion(template, (candidateAnswers[0]).length));
+    //
+    candidateAnswers = randomizeArray(candidateAnswers);
+    for (var i = 0; i < candidateAnswers.length; i++) {
+      var nextCandidateAnswer = candidateAnswers[i];
+      var answerHash = calculateQuestionAnswerHash(template, nextCandidateAnswer);
+      //
+      var br = document.createElement( "br" );
+      $(div).append(br);
+      //
+      var radioButton = document.createElement( "input" );
+      $(radioButton).attr("type", "radio");
+      $(radioButton).attr("name", correctHash);
+      $(radioButton).attr("value", answerHash);
+      $(radioButton).change(function() {uploadFinalExamWipResults();});
+      $(div).append(radioButton);
+      //
+      var span = document.createElement( "span" );
+      $(div).append(span);
+      var formattedCandidateAnswer = "";
+      //console.log("Checking - " + formatRightQuestion(template, (candidateAnswers[0]).length));
+      for (var j = 0; j < nextCandidateAnswer.length; j++) {
+        formattedCandidateAnswer = formattedCandidateAnswer + " (";
+        formattedCandidateAnswer = formattedCandidateAnswer + nextCandidateAnswer[j];
+        formattedCandidateAnswer = formattedCandidateAnswer + ")";
+      }
+      $(span).text(formattedCandidateAnswer);
+    }
+  } else {
+    $(div).text(sectionAbbreviation + "." + currentQuestion + " "
+      + formatRightAnswer(template, candidateAnswers[0]));
+  }
 }
 function constructPartPreamble(sectionId, preamble, sectionAbbreviation, startQuestion, endQuestion) {
   if (preamble) {
     var reference = preamble.reference;
     var body = preamble.body;
-    var compositePreamble = (reference ? reference : []).concat((body ? body : []));
+    var compositePreamble = ((reference && isFinalExamActive()) ? reference : []).concat((body ? body : []));
     var sectionElement = $('#' + sectionId);
     //
     var preambleHeader = document.createElement( "div" );
@@ -183,7 +295,7 @@ function constructSection(section) {
   //console.log("Lodash - " + _.camelCase('Foo Bar'));
   //var sectionTitleId = _.camelCase(getSectionTitle(section));
   //
-  var finalExam = $("#finalExam");
+  var finalExam = $("#finalExamInner");
   var div = document.createElement( "div" );
   var h2 = document.createElement( "h2" );
   $(finalExam).append(div);
@@ -201,19 +313,85 @@ function constructSection(section) {
     processedQuestionCount = processedQuestionCount + getQuestionCount(questions);
   }
 }
-function constructFinalExam() {
+function isFinalExamActive() {
+    return (ChhcsFinalExam2020Context.active === true);
+}
+function getFinalExamEndTime() {
+    return ChhcsFinalExam2020Context.endTime;
+}
+function displayFinalExamMessage(message) {
+    $("#finalExamMessageInner").text(message);
+}
+function isFinalExamTimeUp() {
+    return (new Date()).getTime() > ChhcsFinalExam2020Context.endTime;
+}
+function setFinalExamShowField(value) {
+    ChhcsFinalExam2020Context.showField = value;
+}
+function getFinalExamShowField() {
+    return ChhcsFinalExam2020Context.showField;
+}
+function updateFinalExamShowField() {
+    if (getFinalExamShowField()) {
+        $("#finalExamInner").css("display", "block");
+    } else {
+        $("#finalExamInner").css("display", "none");
+    }
+}
+function constructFinalExam(finalExamContext) {
+  ChhcsFinalExam2020Context = finalExamContext;
+  setFinalExamShowField(false);
+  //
+  //
   var div = document.createElement( "div" );
-  var h1 = document.createElement( "h1" );
-  $(document.body).append(div);
   $(div).attr("id", "finalExam");
+  $(document.body).append(div);
+  //
+  var h1 = document.createElement( "h1" );
   $(div).append(h1);
+  $(h1).text(getExamTitle());
+  //
+  var messageDiv = document.createElement( "div" );
+  $(div).append(messageDiv);
+  $(messageDiv).attr("id", "finalExamMessage");
+  var messageDivInner = document.createElement( "div" );
+  $(messageDiv).append(messageDivInner);
+  //
+  var userPane = document.createElement( "div" );
+  $(messageDivInner).append(userPane);
+  $(userPane).attr("id", "user_pane");
+  //generateLoginDomStructure("user_pane");
+  //
+  var messageDivInnerH2 = document.createElement( "h2" );
+  $(messageDivInner).append(messageDivInnerH2);
+  $(messageDivInnerH2).attr("id", "finalExamMessageInner");
+  //$(messageDivInnerH2).text('abc');
+  //displayFinalExamMessage("abc");
+  //
+  var innerDiv = document.createElement( "div" );
+  $(div).append(innerDiv);
+  $(innerDiv).attr("id", "finalExamInner");
+  updateFinalExamShowField();
   //var div = $(document.body).append("<div/>");
   //var h1 = $(div).append("<h1>big</h1>");
-  $(h1).text(getExamTitle());
   console.log("getSectionCount() = " + getSectionCount())
   console.log(ChhcsFinalExam2020);
   for (var i = 0; i < getSectionCount(); i++) {
     var section = getSection(i);
     constructSection(section);
   }
+  //
+  setInterval(
+    function() {
+      if (isFinalExamTimeUp()) {
+        setFinalExamShowField(false);
+        updateFinalExamShowField();
+        displayFinalExamMessage("Times up, put your pencils down!");
+        //sendData('garysteinmetz', 'chhcsfinalexam2020final', JSON.stringify(scoreFinalExam()), null);
+      } else {
+        displayFinalExamMessage(
+          "There are " + ((ChhcsFinalExam2020Context.endTime - (new Date()).getTime())/1000) + " seconds left.");
+      }
+    },
+    10*1000);
 }

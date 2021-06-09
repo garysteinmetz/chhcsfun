@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+        <script src="/commonUtils.js"></script>
+        <script src="ChhcsFinalExam2020.results.js"></script>
+        <script>
+            //
+            function getMeanDeviation(values, average) {
+                var aggregateMeanDeviation = 0;
+                for (var i = 0; i < values.length; i++) {
+                    aggregateMeanDeviation = aggregateMeanDeviation + Math.abs(values[i] - average);
+                }
+                return Math.round(aggregateMeanDeviation/values.length);
+            }
+            //
+            $(document).ready(
+                function() {
+                    $.get(
+                        {
+                            url: "/appState/garysteinmetz/chhcsfinalexam2020wip/allUsers",
+                            success: function(data, status) {
+                                var totalUsers = 0;
+                                var satMathScores = [];
+                                var satVerbalScores = [];
+                                var satMathAverage = 0;
+                                var satMathMeanDeviation = 0;
+                                var satVerbalAverage = 0;
+                                var satVerbalMeanDeviation = 0;
+                                //
+                                var usernameLeaders = [];
+                                var satMathLeaders = [];
+                                var satVerbalLeaders = [];
+                                //
+                                console.log("ZZZ - data - " + data);
+                                console.log(data);
+                                var keys = Object.keys(data);
+                                for (var i = 0; i < keys.length; i++) {
+                                    console.log("ZZZ nextUsername - " + keys[i]);
+                                    var nextUsername = keys[i];
+                                    if (nextUsername !== 'garysteinmetz') {
+                                        totalUsers++;
+                                        var userObj = data[nextUsername];
+                                        var nextSatMathScore = Math.round(userObj.app_data.sectionScores.SM);
+                                        var nextSatVerbalScore = Math.round(userObj.app_data.sectionScores.SV);
+                                        satMathScores.push(nextSatMathScore);
+                                        satVerbalScores.push(nextSatVerbalScore);
+                                        if (isCompositeScoreHighEnoughForLeaderBoard(nextSatMathScore, nextSatVerbalScore)) {
+                                            usernameLeaders.push(nextUsername);
+                                            satMathLeaders.push(nextSatMathScore);
+                                            satVerbalLeaders.push(nextSatVerbalScore);
+                                        }
+                                        satMathAverage = satMathAverage + nextSatMathScore;
+                                        satVerbalAverage = satVerbalAverage + nextSatVerbalScore;
+                                        console.log("ZZZ Composite SAT Score - " + (nextSatMathScore + nextSatVerbalScore));
+                                    }
+                                }
+                                satMathAverage = Math.round(satMathAverage/totalUsers);
+                                satMathMeanDeviation = getMeanDeviation(satMathScores, satMathAverage);
+                                satVerbalAverage = Math.round(satVerbalAverage/totalUsers);
+                                satVerbalMeanDeviation = getMeanDeviation(satVerbalScores, satVerbalAverage);
+                                //
+                                $("#totalSubmissions").text(totalUsers);
+                                $("#satTotalAverage").text(satMathAverage + satVerbalAverage);
+                                $("#satMathAverage").text(satMathAverage);
+                                $("#satMathMeanDeviation").text(satMathMeanDeviation);
+                                $("#satVerbalAverage").text(satVerbalAverage);
+                                $("#satVerbalMeanDeviation").text(satVerbalMeanDeviation);
+                                //
+                                for (var i = 0; i < usernameLeaders.length; i++) {
+                                    var nextLeader = usernameLeaders[i];
+                                    var nextSatMathScore = satMathLeaders[i];
+                                    var nextSatVerbalScore = satVerbalLeaders[i];
+                                    //
+                                    var tr = document.createElement( "tr" );
+                                    $("#leaderboard").append(tr);
+                                    var td1 = document.createElement( "td" );
+                                    var td2 = document.createElement( "td" );
+                                    var td3 = document.createElement( "td" );
+                                    var td4 = document.createElement( "td" );
+                                    $(tr).append(td1);
+                                    $(tr).append(td2);
+                                    $(tr).append(td3);
+                                    $(tr).append(td4);
+                                    //
+                                    $(td1).text(nextLeader);
+                                    $(td2).text(nextSatMathScore);
+                                    $(td3).text(nextSatVerbalScore);
+                                    $(td4).text(getCertificateIssuingInstitution(nextSatMathScore, nextSatVerbalScore));
+                                }
+                //generateLoginDomStructureImpl(targetId, data);
+                //var developersList = $("#developers_list");
+                //for (var i = 0; i < data.length; i++) {
+                //    console.log('nextDeveloper - ' + data[i]);
+                //    var a = document.createElement( "a" );
+                //    $(developersList).append(a);
+                //    $(a).text(data[i]);
+                //    $(a).attr("href", "/content/" + data[i]);
+                //    var br = document.createElement( "br" );
+                //    $(developersList).append(br);
+                //}
+                            }
+                        }
+                    );
+                    getUserInfo(
+                        function(data, status) {
+                            generateLoginDomStructureImpl("user_pane", data);
+                            if (data.isLoggedIn) {
+                                $("#click_for_certificate").show();
+                            }
+                        }
+                    );
+                }
+            );
+            //
+        </script>
+        <style>
+            table {
+                border: 1px solid black;
+            }
+            td {
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    <div style="text-align: center">
+        <h1>CHHCS - Web Applications and Cloud Computer</h1>
+        <h2>Final Exam for School Year 2019-2020</h2>
+    </div>
+    <div id="user_pane">
+
+    </div>
+    <div style="display: none" id="click_for_certificate">
+        <a target="_blank" href="ChhcsFinalExam2020.certificate.html">Click here to get your Certificate of Completion!</a>
+    </div>
+    <div style="text-align: center; margin-left: auto; margin-right: auto;">
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td colspan="2" style="text-align: center; text-decoration: underline;">Exam Statistics</td>
+            </tr>
+            <tr>
+                <td>Total Submissions:</td>
+                <td id="totalSubmissions"></td>
+            </tr>
+            <tr>
+                <td>SAT Total Average:</td>
+                <td id="satTotalAverage"></td>
+            </tr>
+            <tr>
+                <td>SAT Math Average:</td>
+                <td id="satMathAverage"></td>
+            </tr>
+            <tr>
+                <td>SAT Math Mean Deviation:</td>
+                <td id="satMathMeanDeviation"></td>
+            </tr>
+            <tr>
+                <td>SAT Verbal Average:</td>
+                <td id="satVerbalAverage"></td>
+            </tr>
+            <tr>
+                <td>SAT Math Mean Deviation:</td>
+                <td id="satVerbalMeanDeviation"></td>
+            </tr>
+        </table>
+        <p />
+        <table style="text-align: center; margin-left: auto; margin-right: auto;" id="leaderboard">
+            <tr>
+                <td colspan="4" style="text-align: center; text-decoration: underline;">Leaderboard</td>
+            </tr>
+            <tr>
+                <td style="text-align: center; text-decoration: underline;">Username</td>
+                <td style="text-align: center; text-decoration: underline;">SAT Math</td>
+                <td style="text-align: center; text-decoration: underline;">SAT Verbal</td>
+                <td style="text-align: center; text-decoration: underline;">School of Degree</td>
+            </tr>
+        </table>
+    </div>
+    </body>
+</html>

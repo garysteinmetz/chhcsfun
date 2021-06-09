@@ -369,8 +369,8 @@ addSingleQuestionToMath(
     ["Git", "new features ('branching')", "easy"],
     ["Git", "new features ('branching')", "difficult"],
     ["MySQL", "new features ('branching')", "easy"],
-    ["MySQL", "new features ('branching')", "difficult"]
-    ["Git", "rollbacks", "difficult"],
+    ["MySQL", "new features ('branching')", "difficult"],
+    ["Git", "rollbacks", "difficult"]
   ]
 );
 addSingleQuestionToMath(
@@ -1155,8 +1155,8 @@ addSingleQuestionToMath(
     ["the current directory (no change), the parent directory, the user's home directory, and the root directory, respectively"],
     ["the parent directory, the current directory (no change), the user's home directory, and the root directory, respectively"],
     ["the user's home directory, the current directory (no change), the parent directory, and the root directory, respectively"],
-    ["the root directory, the current directory (no change), the parent directory, and the user's home directory, respectively"]
-    ["the parent directory, the parent directory, the user's home directory, and the root directory, respectively"],
+    ["the root directory, the current directory (no change), the parent directory, and the user's home directory, respectively"],
+    ["the parent directory, the parent directory, the user's home directory, and the root directory, respectively"]
   ]
 );
 addSingleQuestionToMath(
