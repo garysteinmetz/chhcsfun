@@ -1,7 +1,7 @@
 //
 var ChhcsFinalExam2020Context;
 var ChhcsFinalExam2020 = {
-  title: "CHHCS - Web Applications and Cloud Computer - Final Exam for School Year 2019-2020",
+  title: "CHHCS - Web Applications and Cloud Computer - Final Exam for School Year 2020-2021",
   sections: [],
   answerKey: {}
 };
@@ -20,7 +20,7 @@ function getFinalExamAnswerKey() {
   return JSON.parse(JSON.stringify(ChhcsFinalExam2020.answerKey));
 }
 function uploadFinalExamWipResults() {
-  sendData('garysteinmetz', 'chhcsfinalexam2020wip', JSON.stringify(scoreFinalExam()), null);
+  sendData('app10', JSON.stringify(scoreFinalExam()), null);
 }
 function scoreFinalExam() {
   var finalScore = {};

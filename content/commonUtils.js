@@ -30,7 +30,8 @@ function generateLoginDomStructureImpl(targetId, userInfo) {
     //
     //var userDisplayName = getCookie('userDisplayName');
     if (userInfo.isLoggedIn) {
-        $(div).text("Hello " + userInfo.displayName + "!");
+        //console.log("ZZZ userInfo - " + JSON.stringify(userInfo));
+        $(div).text("Hello " + userInfo.username + "!");
         //alert('Here');
     } else {
         //alert('There');
@@ -38,10 +39,10 @@ function generateLoginDomStructureImpl(targetId, userInfo) {
         var state = "&state=" + encodeURIComponent(document.URL);
         //
         //var href = baseUrl + path + standardParams + redirectUrl + state;
-        var href = getCookie("loginUrl") + redirectUrl + state;
+        //var href = getCookie("loginUrl") + redirectUrl + state;
         var a = document.createElement( "a" );
         $(div).append(a);
-        $(a).attr("href", href);
+        $(a).attr("href", "/login?url=" + encodeURIComponent(document.URL));
         $(a).text("Login Now");
     }
 }
@@ -54,10 +55,10 @@ function getCookie(name) {
     }
     return outValue;
 }
-function sendData(author, appName, appData, callback) {
+function sendData(appName, appData, callback) {
     $.post(
         {
-            url: "/appState/" + author + "/" + appName,
+            url: "/appState/" + appName,
             data: {appData: JSON.stringify(appData)},
             success: function(data, status) {
                 if (callback) {
@@ -68,10 +69,10 @@ function sendData(author, appName, appData, callback) {
         }
     );
 }
-function getData(author, appName, callback) {
+function getData(appName, callback) {
     $.get(
         {
-            url: "/appState/" + author + "/" + appName,
+            url: "/appState/" + appName,
             success: function(data, status) {
                 if (callback) {
                     callback(data, status);
