@@ -241,7 +241,7 @@ function constructPartPreamble(sectionId, preamble, sectionAbbreviation, startQu
   if (preamble) {
     var reference = preamble.reference;
     var body = preamble.body;
-    var compositePreamble = ((reference && isFinalExamActive()) ? reference : []).concat((body ? body : []));
+    var compositePreamble = ((reference && !isFinalExamActive()) ? reference : []).concat((body ? body : []));
     var sectionElement = $('#' + sectionId);
     //
     var preambleHeader = document.createElement( "div" );
