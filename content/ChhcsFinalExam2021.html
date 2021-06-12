@@ -8,7 +8,7 @@
     <script src="./ChhcsFinalExam2021.content.js"></script>
     <script>
       var finalExamContext = {
-        active: false,
+        active: true,
         endTime: new Date('June 12, 2021 4:00:00 PM GMT-04:00').getTime()
       };
       $( document ).ready(
@@ -24,7 +24,7 @@
               generateLoginDomStructureImpl("user_pane", data);
               if (data.isLoggedIn) {
                 displayFinalExamMessage("You are logged in, take the exam");
-                getData('app10',
+                getData('app11',
                   function(data, status) {
                       //console.log("Preload");
                       //console.log(data);

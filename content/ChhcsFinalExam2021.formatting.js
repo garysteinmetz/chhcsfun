@@ -20,7 +20,7 @@ function getFinalExamAnswerKey() {
   return JSON.parse(JSON.stringify(ChhcsFinalExam2020.answerKey));
 }
 function uploadFinalExamWipResults() {
-  sendData('app10', JSON.stringify(scoreFinalExam()), null);
+  sendData('app11', JSON.stringify(scoreFinalExam()), null);
 }
 function scoreFinalExam() {
   var finalScore = {};
