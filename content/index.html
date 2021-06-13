@@ -1,6 +1,23 @@
 <html>
+  <head>
+    <script src="./jquery.js"></script>
+    <script src="./commonUtils.js"></script>
+    <script>
+      $( document ).ready(
+        function() {
+          getUserInfo(
+            function(data, status) {
+              generateLoginDomStructureImpl("user_pane", data);
+            }
+          );
+        }
+      );
+    </script>
+  </head>
   <body>
     <h1>Welcome to Planet Boring Intergalactic Airport!</h1>
+    <div id="user_pane" ></div>
+    <p />
     Click <a href="ChhcsFinalExam2021.html">here</a> to take the final exam
     which will initiate the return flight to your home world.
     <p />
