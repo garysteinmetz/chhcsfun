@@ -8,6 +8,7 @@
     <script src="./ChhcsFinalExam2021.content.js"></script>
     <script>
       var finalExamContext = {
+        readOnlyShowResultsMode: true,
         active: true,
         endTime: new Date('June 12, 2021 4:00:00 PM GMT-04:00').getTime()
       };
@@ -23,36 +24,38 @@
             function(data, status) {
               generateLoginDomStructureImpl("user_pane", data);
               if (data.isLoggedIn) {
-                displayFinalExamMessage("You are logged in, take the exam");
-                getData('app11',
-                  function(data, status) {
-                      //console.log("Preload");
-                      //console.log(data);
-                    if (data.isPresent) {
-                      var appData = JSON.parse(JSON.parse(data.appData));
-                      var sections = Object.keys(appData.answerKey);
-                      for (var i = 0; i < sections.length; i++) {
-                        var questions = Object.keys(appData.answerKey[sections[i]]);
-                        //console.log("questions - " + questions);
-                        //var questionList = Object.keys(questions);
-                        for (var j = 0; j < questions.length; j++) {
-                          var nextQuestionHash = questions[j];
-                          //console.log("nextQuestionHash - " + nextQuestionHash);
-                          var nextQuestionAnswer = appData.answerKey[sections[i]][nextQuestionHash].submittedAnswer;
-                          //console.log("nextQuestionAnswer - " + nextQuestionAnswer);
-                          if (nextQuestionAnswer) {
-                            //$("input[name='" + questions[j] + "']").prop('checked',true);
-                            $("input[name=" + nextQuestionHash + "][value=" + nextQuestionAnswer + "]").prop('checked', true);
+                //displayFinalExamMessage("You are logged in, take the exam");
+                if (renderCorrectDisplay()) {
+                  getData('app11',
+                    function(data, status) {
+                        //console.log("Preload");
+                        //console.log(data);
+                      if (data.isPresent) {
+                        var appData = JSON.parse(JSON.parse(data.appData));
+                        var sections = Object.keys(appData.answerKey);
+                        for (var i = 0; i < sections.length; i++) {
+                          var questions = Object.keys(appData.answerKey[sections[i]]);
+                          //console.log("questions - " + questions);
+                          //var questionList = Object.keys(questions);
+                          for (var j = 0; j < questions.length; j++) {
+                            var nextQuestionHash = questions[j];
+                            //console.log("nextQuestionHash - " + nextQuestionHash);
+                            var nextQuestionAnswer = appData.answerKey[sections[i]][nextQuestionHash].submittedAnswer;
+                            //console.log("nextQuestionAnswer - " + nextQuestionAnswer);
+                            if (nextQuestionAnswer) {
+                              //$("input[name='" + questions[j] + "']").prop('checked',true);
+                              $("input[name=" + nextQuestionHash + "][value=" + nextQuestionAnswer + "]").prop('checked', true);
+                            }
                           }
                         }
+                        //console.log(appData);
+                        //console.log(appData.sectionScores);
                       }
-                      //console.log(appData);
-                      //console.log(appData.sectionScores);
+                      setFinalExamShowField(true);
+                      updateFinalExamShowField();
                     }
-                    setFinalExamShowField(true);
-                    updateFinalExamShowField();
-                  }
-                );
+                  );
+                }
               } else {
                 displayFinalExamMessage("You must be logged in to use this application");
               }

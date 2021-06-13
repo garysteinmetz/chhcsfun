@@ -218,10 +218,17 @@ function constructQuestion(sectionId, question, preamble, sectionAbbreviation, c
       $(radioButton).attr("type", "radio");
       $(radioButton).attr("name", correctHash);
       $(radioButton).attr("value", answerHash);
-      $(radioButton).change(function() {uploadFinalExamWipResults();});
+      if (!isReadOnlyShowResultsMode()) {
+        $(radioButton).change(function() {uploadFinalExamWipResults();});
+      } else {
+        $(radioButton).attr("disabled", true);
+      }
       $(div).append(radioButton);
       //
       var span = document.createElement( "span" );
+      if (answerHash === correctHash) {
+        $(span).css('color', 'green');
+      }
       $(div).append(span);
       var formattedCandidateAnswer = "";
       //console.log("Checking - " + formatRightQuestion(template, (candidateAnswers[0]).length));
@@ -241,7 +248,8 @@ function constructPartPreamble(sectionId, preamble, sectionAbbreviation, startQu
   if (preamble) {
     var reference = preamble.reference;
     var body = preamble.body;
-    var compositePreamble = ((reference && !isFinalExamActive()) ? reference : []).concat((body ? body : []));
+    var showReferences = !isFinalExamActive() || isReadOnlyShowResultsMode();
+    var compositePreamble = ((reference && showReferences) ? reference : []).concat((body ? body : []));
     var sectionElement = $('#' + sectionId);
     //
     var preambleHeader = document.createElement( "div" );
@@ -325,6 +333,9 @@ function displayFinalExamMessage(message) {
 function isFinalExamTimeUp() {
     return (new Date()).getTime() > ChhcsFinalExam2020Context.endTime;
 }
+function isReadOnlyShowResultsMode() {
+    return ChhcsFinalExam2020Context.readOnlyShowResultsMode;
+}
 function setFinalExamShowField(value) {
     ChhcsFinalExam2020Context.showField = value;
 }
@@ -381,17 +392,21 @@ function constructFinalExam(finalExamContext) {
     constructSection(section);
   }
   //
-  setInterval(
-    function() {
-      if (isFinalExamTimeUp()) {
-        setFinalExamShowField(false);
-        updateFinalExamShowField();
-        displayFinalExamMessage("Times up, put your pencils down!");
-        //sendData('garysteinmetz', 'chhcsfinalexam2020final', JSON.stringify(scoreFinalExam()), null);
-      } else {
-        displayFinalExamMessage(
-          "There are " + ((ChhcsFinalExam2020Context.endTime - (new Date()).getTime())/1000) + " seconds left.");
-      }
-    },
-    10*1000);
+  setInterval(renderCorrectDisplay, 10*1000);
+}
+function renderCorrectDisplay() {
+  var outValue = true;
+  if (isReadOnlyShowResultsMode()) {
+    displayFinalExamMessage("The correct answer to each question is colored green.");
+  } else if (isFinalExamTimeUp()) {
+    outValue = false;
+    setFinalExamShowField(false);
+    updateFinalExamShowField();
+    displayFinalExamMessage("Time's up, put your pencils down!");
+    //sendData('garysteinmetz', 'chhcsfinalexam2020final', JSON.stringify(scoreFinalExam()), null);
+  } else {
+    displayFinalExamMessage(
+      "There are " + ((ChhcsFinalExam2020Context.endTime - (new Date()).getTime())/1000) + " seconds left.");
+  }
+  return outValue;
 }
